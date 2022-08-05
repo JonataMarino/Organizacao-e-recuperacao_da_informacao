@@ -41,7 +41,7 @@ public class Ex_04_08_22 {
                 double Desconto = Salario * 0.05;
                 Salario = Salario - Desconto;
                 System.out.println("Seu salário sofreu um desconto de " + Desconto + "R$ devido ao cargo exercido!");
-                System.out.println("Olá " + Nome + ".Você tem " + Idade + " anos. Seu id é" + Id + " .Seu Salario atual é de "+ Salario +"R$ e você exerce o cargo de Gerente!");
+                System.out.println("Olá " + Nome + ".Você tem " + Idade + " anos. Seu id é :" + Id + " .Seu Salario atual é de "+ Salario +"R$ e você exerce o cargo de Gerente!");
                 System.out.println("para entrarmos em contato usaremos o numero de telefone: "+ Telefone);
             }
             else if(Salario >= 10000 && Cargo == 3){
@@ -52,7 +52,7 @@ public class Ex_04_08_22 {
                 System.out.println("para entrarmos em contato usaremos o numero de telefone: "+ Telefone);
 
             }else{
-                System.out.println("Olá " + Nome + ".Você tem " + Idade + " anos. Seu id é : " + Id + " seu salário atual é de " + Salario+ "R$ e voce exerco o cargo de colaborador" );
+                System.out.println("Olá " + Nome + ".Você tem " + Idade + " anos. Seu id é : " + Id + " .Seu salário atual é de " + Salario+ "R$ e voce exerce o cargo de colaborador" );
                 System.out.println("para entrarmos em contato usaremos o numero de telefone: "+ Telefone);
 
             }

@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Ex_04_08_22 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
     int Id;
     String Nome;
     String Telefone;

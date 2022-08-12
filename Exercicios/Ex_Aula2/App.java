@@ -14,7 +14,7 @@ public class App {
             int age = sc.nextInt();
             p.setAge(age);
             if (p.getAge() < 18) {
-                System.out.println("Não foi possível completar a consulta pois você não tem maoridade!");
+                System.out.println("Não foi possível completar a solicitação pois você não tem maoridade!");
             } else {
 
                 System.out.print("informe seu id: ");
@@ -104,7 +104,6 @@ public class App {
                 System.out.println("Digite um número válido?");
                 System.out.print("Digite 1 para sim e 0 para não: ");
                 i = sc.nextInt();
-
             }
         }
     }

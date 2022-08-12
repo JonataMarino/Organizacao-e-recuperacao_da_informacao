@@ -90,8 +90,16 @@ public class App {
                     System.out.println("Para entrarmos em contato usaremos o número " + p.getTelephone());
                 }
             }
+            p.addPeople(p);
+
+          /*  for (People people: p.getPeople()){
+                System.out.println((people));
+            }  */
+             p.getPeople().forEach(System.out::println);
+
             System.out.println("Deseja calcular sua renda novamente?");
             System.out.print("Digite 1 para sim e 0 para não: ");
+
             i = sc.nextInt();
             if (i != 0 && i != 1){
                 System.out.println("Digite um número válido?");

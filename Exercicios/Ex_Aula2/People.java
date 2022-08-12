@@ -97,9 +97,21 @@ public class People {
     public int getCargo() {
         return cargo;
     }
-
     public void setCargo(int cargo) {
         this.cargo = cargo;
+    }
+
+    @Override
+    public String toString() {
+        return "Registro{" +
+                "'id'= " + id + '\'' +
+                ", 'name'= " + name + '\'' +
+                ", 'telephone'= " + telephone + '\'' +
+                ", 'age'= " + age + '\'' +
+                ", 'nOfChildren'= " + nOfChildren + '\'' +
+                ", 'salary'= " + salary + '\'' +
+                ", 'cargo'= " + cargo + '\'' +
+                '}';
     }
 }
 

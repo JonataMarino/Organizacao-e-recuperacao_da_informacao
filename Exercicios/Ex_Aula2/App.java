@@ -94,7 +94,7 @@ public class App {
           /*  for (People people: p.getPeople()){
                 System.out.println((people));
             }  */
-             p.getPeople().forEach(System.out::println);
+            p.getPeople().forEach(System.out::println);
 
             System.out.println("Deseja calcular sua renda novamente?");
             System.out.print("Digite 1 para sim e 0 para não: ");
@@ -109,3 +109,4 @@ public class App {
         }
     }
 }
+

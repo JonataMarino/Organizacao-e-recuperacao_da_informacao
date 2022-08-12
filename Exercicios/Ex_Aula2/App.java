@@ -101,7 +101,7 @@ public class App {
             System.out.print("Digite 1 para sim e 0 para não: ");
 
             i = sc.nextInt();
-            if (i != 0 && i != 1){
+            while (i != 0 && i != 1){
                 System.out.println("Digite um número válido?");
                 System.out.print("Digite 1 para sim e 0 para não: ");
                 i = sc.nextInt();

@@ -59,21 +59,28 @@ public class App {
 
                 }
 
-                if (p.getSalary() >= 10000 && p.getCargo() == 2) {
+                if ( p.getCargo() == 2 ) {
                     double salario = p.getSalary();
-                    double desconto = salario * 0.05;
-                    p.setSalary( salario - desconto );
                     System.out.println("Olá " + p.getName() + "! Você tem " + p.getAge() + " anos de idade e seu id é: " + p.getId());
                     System.out.println("Você exerce o cargo de Gerente!");
-                    System.out.println("Seu salário sofreu um desconto fiscal de R$ " + df.format(desconto) + " devido ao cargo exercido");
+                    if(p.getSalary() >= 10000){
+                        double desconto = p.getSalary() * 0.1;
+                        p.setSalary(salario - desconto);
+                        System.out.println("Seu salário sofreu um desconto fiscal de R$ " + df.format(desconto) + " devido ao cargo exercido!");
+                    }
                     System.out.println("Seu salário atual é de RS" + df.format(p.getSalary()));
                     System.out.println("para entrarmos em contato usaremos o telefone: " + p.getTelephone());
-                } else if (p.getSalary() >= 10000 && p.getCargo() == 3) {
-                    double salario = p.getSalary();
-                    double desconto = p.getSalary() * 0.1;
-                    p.setSalary(salario - desconto);
                     System.out.println("Você exerce o cargo de Analista de sistemas!");
-                    System.out.println("Seu salário sofreu um desconto fiscal de R$ " + df.format(desconto) + " devido ao cargo exercido!");
+                }
+                else if ( p.getCargo() == 3) {
+                    System.out.println("Olá " + p.getName() + "! Você tem " + p.getAge() + " anos de idade e seu id é: " + p.getId());
+                    System.out.println("Você exerce o cargo de Analista de Sistemas!");
+                    double salario = p.getSalary();
+                    if(p.getSalary() >= 10000){
+                        double desconto = p.getSalary() * 0.1;
+                        p.setSalary(salario - desconto);
+                        System.out.println("Seu salário sofreu um desconto fiscal de R$ " + df.format(desconto) + " devido ao cargo exercido!");
+                    }
                     System.out.println("Seu salário atual é de R$" + df.format(p.getSalary()));
                     System.out.println("para entrarmos em contato usaremos o telefone: " + p.getTelephone());
                 } else if (p.getCargo() == 1) {
@@ -86,6 +93,12 @@ public class App {
             System.out.println("Deseja calcular sua renda novamente?");
             System.out.print("Digite 1 para sim e 0 para não: ");
             i = sc.nextInt();
+            if (i != 0 && i != 1){
+                System.out.println("Digite um número válido?");
+                System.out.print("Digite 1 para sim e 0 para não: ");
+                i = sc.nextInt();
+
+            }
         }
     }
 }

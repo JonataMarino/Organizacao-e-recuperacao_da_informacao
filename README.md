@@ -1,4 +1,4 @@
-#Repositório refente à materia do 6º Termo de Sistemas de Informação
-##Organizacao-e-recuperacao_da_informacao
+# Repositório refente à materia do 6º Termo de Sistemas de Informação
+## Organizacao-e-recuperacao_da_informacao
 **matéria lecionada com a linguagem de programação Java**
 período: 2º semestre do ano letivo.

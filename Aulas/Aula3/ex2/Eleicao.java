@@ -19,10 +19,10 @@ public class Eleicao {
 
     //atributos da classe
 
-    private int nOfVoters;
-    private int nVotesWhite;
-    private int nVotesNull;
-    private int nVotesValids;
+    private float nOfVoters;
+    private float nVotesWhite;
+    private float nVotesNull;
+    private float nVotesValids;
 
     //metodos
 
@@ -35,35 +35,35 @@ public class Eleicao {
         this.eleicao = eleicao;
     }
 
-    public int getnOfVoters() {
+    public float getnOfVoters() {
         return nOfVoters;
     }
 
-    public void setnOfVoters(int nOfVoters) {
+    public void setnOfVoters(float nOfVoters) {
         this.nOfVoters = nOfVoters;
     }
 
-    public int getnVotesWhite() {
+    public float getnVotesWhite() {
         return nVotesWhite;
     }
 
-    public void setnVotesWhite(int nVotesWhite) {
+    public void setnVotesWhite(float nVotesWhite) {
         this.nVotesWhite = nVotesWhite;
     }
 
-    public int getnVotesNull() {
+    public float getnVotesNull() {
         return nVotesNull;
     }
 
-    public void setnVotesNull(int nVotesNull) {
+    public void setnVotesNull(float nVotesNull) {
         this.nVotesNull = nVotesNull;
     }
 
-    public int getnVotesValids() {
+    public float getnVotesValids() {
         return nVotesValids;
     }
 
-    public void setnVotesValids(int nVotesValids) {
+    public void setnVotesValids(float nVotesValids) {
         this.nVotesValids = nVotesValids;
     }
 

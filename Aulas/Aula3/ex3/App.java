@@ -21,12 +21,13 @@ public class App {
         float tax =(float) (c.getValueFabric() * 0.45);
         c.setTax(tax);
         float realValue = c.getValueFabric() + c.getPercDistributor() + c.getTax();
+        c.setRealValeu(realValue);
 
 
 
-        System.out.println("O valor Final do carro é: R$"+df.format(realValue));
+        System.out.println("O valor Final do carro é: R$"+df.format(c.getRealValeu()));
         System.out.println("Um valor de "+ df.format(percDistributor) +"R$ foi atribuido ao valor de fabrica pelo distribuidor.");
         System.out.println("A taxa cobrada sobre a venda do veículo foi de " + df.format(tax) +"R$");
-
+        System.out.println(c);
     }
 }

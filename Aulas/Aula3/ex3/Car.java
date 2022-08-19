@@ -8,20 +8,32 @@ import java.util.List;
 
 public class Car {
     //construtor
-    public Car (float valueFabric, float percDistributor, float tax){
+    public Car (float valueFabric, float percDistributor, float tax, float realValeu){
     this.valueFabric = valueFabric;
     this.percDistributor = percDistributor;
     this.tax = tax;
+    this.realValeu = realValeu;
     }
     public Car(){}
     List<Car> car = new ArrayList<Car>();
     private float valueFabric;
     private float percDistributor;
     private float tax;
+    private float realValeu;
 
     //métodos
 
+    public float getRealValeu() {
+        return realValeu;
+    }
 
+    public void setRealValeu(float realValeu) {
+        this.realValeu = realValeu;
+    }
+
+    public void addCar(Car car){
+        this.car.add(car);
+    }
 
 
     public List<Car> getCar() {
@@ -59,10 +71,10 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "'value car' = '" + car + '\''+
-                ", 'value Fabric' = '" + valueFabric + '\''+
-                ", 'percentage Distributor' = '" + percDistributor + '\''+
-                ", 'tax' = '" + tax +
+                "'valor de Fabrica' = '" + valueFabric + '\''+
+                ", 'percentual do Distributor' = '" + percDistributor +  '\''+
+                ", 'taxa' = '" + tax +  '\''+
+                ", 'valor final' =" + realValeu + '\'' +
                 '}';
     }
 }

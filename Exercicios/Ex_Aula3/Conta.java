@@ -46,10 +46,10 @@ public abstract class Conta {
     @Override
     public String toString() {
         return "Conta{" +
-                "numero=" + numero + '\''+
-                ", descricao' = '" + descricao + '\'' +
-                ", Conta " + tipo + '\'' +
-                ", dataDeAbertura='" + dataDeAbertura + '\'' +
-                '}';
+                "numero = '" + numero + '\''+
+                ", 'descricao' = '" + descricao + '\'' +
+                ", 'Conta= '" + tipo + '\'' +
+                ", 'data De Abertura= '" + dataDeAbertura + '\''
+                ;
     }
 }

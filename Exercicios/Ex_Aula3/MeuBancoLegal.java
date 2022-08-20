@@ -15,6 +15,7 @@ public class MeuBancoLegal {
                 cc.setTipo("Conta Corrente");
 
                 System.out.print("Descrição da conta - Universitária, Pessoa Física, pessoa Jurídica: ");
+                sc.nextLine();
                 String descricao = sc.nextLine();
                 cc.setDescricao(descricao);
 
@@ -27,9 +28,10 @@ public class MeuBancoLegal {
                 cc.setLimite(limite);
 
                 System.out.print("Informe a data de abertura: ");
+                sc.nextLine();
                 String dataAbertura = sc.nextLine();
                 cc.setDataDeAbertura(dataAbertura);
-
+                System.out.println(cc);
 
             }
             else if (decision == 2){
@@ -37,6 +39,7 @@ public class MeuBancoLegal {
                 cp.setTipo("Conta Poupança");
 
                 System.out.print("Descrição da conta - Conjunta | Investimento | Previdência Privada: ");
+                sc.nextLine();
                 String descricao = sc.nextLine();
                 cp.setDescricao(descricao);
 
@@ -49,10 +52,19 @@ public class MeuBancoLegal {
                 cp.setLimite(limite);
 
                 System.out.print("Informe a data de abertura: ");
+                sc.nextLine();
                 String dataAbertura = sc.nextLine();
                 cp.setDataDeAbertura(dataAbertura);
+                System.out.println(cp);
 
-
+            }
+            System.out.println("deseja Registrar outra conta? ");
+            System.out.print("digite 1 para sim e 0 para não: ");
+            i = sc.nextInt();
+            while (i < 0 || i >1 ){
+                System.out.println("deseja Registrar outra conta? ");
+                System.out.print("digite 1 para sim e 0 para não: ");
+                i = sc.nextInt();
             }
         }
     }

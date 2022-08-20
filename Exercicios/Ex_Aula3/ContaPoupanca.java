@@ -8,4 +8,11 @@ public class ContaPoupanca extends Conta{
     public void setLimite(double limite) {
         this.limite = limite;
     }
+    @Override
+    public String toString() {
+        return super.toString()  + ", 'limite' =' " + limite +
+                '}';
+    }
 }
+
+

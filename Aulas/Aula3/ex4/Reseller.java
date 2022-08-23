@@ -98,4 +98,18 @@ public class Reseller {
     public void setCommission(float commission) {
         this.commission = commission;
     }
+
+
+    @Override
+    public String toString() {
+        return "Revendedor{"+
+                ", 'Nome' = '" + name + '\'' +
+                ", 'Salário Fixo' = 'R$" + fixSalary + '\'' +
+                ", 'Comissão fixa' = 'R$" + fixCommission + '\''+
+                ", 'Comissão extra' = 'R$" + commission +'\''+
+                ", 'Carros vendidos = '" + carSold +'\''+
+                ", 'Salário final' = 'R$" + finalSalary + '\''+
+                ", 'Valor total das vendas' = 'R$" + totalValue +
+                '}';
+    }
 }

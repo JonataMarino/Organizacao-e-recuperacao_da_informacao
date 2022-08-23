@@ -45,7 +45,7 @@ public class App {
         System.out.println("Devido suas vendas teve uma comissão fixa de R$" + (r.getCarSold() * r.getFixCommission()));
         System.out.println("Também obteve comissão adicional de vendas no valor de R$" + r.getCommission());
         System.out.println("Seu salário final é de R$" + df.format(r.getFinalSalary()));
-
+        System.out.println(r);
 
 
 

@@ -71,10 +71,10 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "'valor de Fabrica' = '" + valueFabric + '\''+
-                ", 'percentual do Distributor' = '" + percDistributor +  '\''+
-                ", 'taxa' = '" + tax +  '\''+
-                ", 'valor final' =" + realValeu + '\'' +
+                "'valor de Fabrica' = 'R$" + valueFabric + '\''+
+                ", 'percentual do Distributor' = 'R$" + percDistributor +  '\''+
+                ", 'taxa' = 'R$" + tax +  '\''+
+                ", 'valor final' = 'R$" + realValeu + '\'' +
                 '}';
     }
 }

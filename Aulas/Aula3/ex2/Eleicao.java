@@ -71,9 +71,9 @@ public class Eleicao {
     public String toString() {
         return "Eleicao{" +
                 ", 'Numero de Eleitores'= '" + nOfVoters +'\'' +
-                ", 'Votos Brancos' =" + nVotesWhite +'\'' +
-                ", 'Votos Nulos' =" + nVotesNull +'\'' +
-                ", 'Votos Validos' =" + nVotesValids +'\'' +
+                ", 'Votos Brancos' = '" + nVotesWhite +'\'' +
+                ", 'Votos Nulos' = '" + nVotesNull +'\'' +
+                ", 'Votos Validos' = '" + nVotesValids +'\'' +
                 '}';
     }
 }

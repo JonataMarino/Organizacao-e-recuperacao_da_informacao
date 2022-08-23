@@ -69,4 +69,14 @@ public class IdadePessoa {
     public void setPessoa(List<IdadePessoa> pessoa) {
         this.pessoa = pessoa;
     }
+
+    @Override
+    public String toString() {
+        return "dados Informada{" +
+                "'nome' = '" + name + '\'' +
+                ", 'anos' = '" + years + '\'' +
+                ", 'meses' = '" + months +'\'' +
+                ", 'dias' = '" + days +'\'' +
+                '}';
+    }
 }

@@ -19,17 +19,17 @@ import java.util.List;
 
 public class IdealWeight {
 
-    public IdealWeight(String name, char sex, double weight){
+    public IdealWeight(String name, char sex, double height){
         this.name = name;
         this.sex = sex;
-        this.weight = weight;
+        this.height = height;
 
     }
     public IdealWeight(){}
 
     private String name;
     private char sex;
-    private double weight;
+    private double height;
 
     List<IdealWeight> idealweight = new ArrayList<IdealWeight>();
 
@@ -49,12 +49,12 @@ public class IdealWeight {
         this.sex = sex;
     }
 
-    public double getWeight() {
-        return weight;
+    public double getHeight() {
+        return height;
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public void setHeight(double height) {
+        this.height = height;
     }
 
     public List<IdealWeight> getIdealweight() {

@@ -1,6 +1,21 @@
-public abstract class Person {
+public abstract class Person implements IPerson {
 
     public Person(){}
+
+    @Override
+    public double calculateSalary() {
+        return 0;
+    }
+
+    @Override
+    public double caucaleteAge() {
+        return 0;
+    }
+
+    @Override
+    public String printerReport() {
+        return null;
+    }
 
     public Person (int id, String name){
         this.id = id;

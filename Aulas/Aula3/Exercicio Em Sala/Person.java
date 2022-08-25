@@ -43,10 +43,10 @@ public abstract class Person implements IPerson {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "Person: " +
                 "'id' = '" + id + '\'' +
-                ", 'name' '= " + name + '\''+
-                "}";
+                ", 'name' '= " + name + '\''
+                ;
     }
 }
 

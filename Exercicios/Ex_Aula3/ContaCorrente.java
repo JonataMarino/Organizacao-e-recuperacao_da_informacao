@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContaCorrente extends Conta{
-        private double limite;
+    private int id;
+    private double limite;
 
     public double getLimite() {
         return limite;

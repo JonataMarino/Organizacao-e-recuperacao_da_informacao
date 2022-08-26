@@ -14,10 +14,15 @@ public class MeuBancoLegal {
                 ContaCorrente cc = new ContaCorrente();
                 cc.setTipo("Conta Corrente");
 
+
                 System.out.print("Descrição da conta - Universitária, Pessoa Física, pessoa Jurídica: ");
                 sc.nextLine();
                 String descricao = sc.nextLine();
                 cc.setDescricao(descricao);
+
+                System.out.print("Informe um ID para a nova conta: ");
+                int id = sc.nextInt();
+                cc.setId(id);
 
                 System.out.print("Informe o numero da nova conta: ");
                 int numero = sc.nextInt();
@@ -31,12 +36,16 @@ public class MeuBancoLegal {
                 sc.nextLine();
                 String dataAbertura = sc.nextLine();
                 cc.setDataDeAbertura(dataAbertura);
+                cc.printTipo(numero, descricao);
                 System.out.println(cc);
 
             }
             else if (decision == 2){
                 ContaPoupanca cp = new ContaPoupanca();
                 cp.setTipo("Conta Poupança");
+                System.out.print("Informe um ID para a nova conta: ");
+                int id = sc.nextInt();
+                cp.setId(id);
 
                 System.out.print("Descrição da conta - Conjunta | Investimento | Previdência Privada: ");
                 sc.nextLine();
@@ -55,6 +64,7 @@ public class MeuBancoLegal {
                 sc.nextLine();
                 String dataAbertura = sc.nextLine();
                 cp.setDataDeAbertura(dataAbertura);
+                cp.printTipo(numero, descricao);
                 System.out.println(cp);
 
             }

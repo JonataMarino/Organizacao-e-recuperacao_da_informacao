@@ -1,11 +1,16 @@
-public abstract class Conta {
+public abstract class Conta implements IConta {
     public Conta(){}
+
+
+
     public Conta(int numero, String descricao, String tipo, String dataDeAbertura){
         this.numero = numero;
         this.descricao = descricao;
         this.tipo = tipo;
         this.dataDeAbertura = dataDeAbertura;
     }
+
+    private int id;
     private int numero;
     private String descricao;
     private String tipo;
@@ -15,8 +20,22 @@ public abstract class Conta {
         return numero;
     }
 
+    @Override
+    public String printTipo(int numero, String descricao) {
+        return "'Numero' = " +this.numero + " 'Descrição': "+ this.descricao+" ";
+    }
+
+
     public void setNumero(int numero) {
         this.numero = numero;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDescricao() {
@@ -45,10 +64,8 @@ public abstract class Conta {
 
     @Override
     public String toString() {
-        return "Conta{" +
-                "numero = '" + numero + '\''+
-                ", 'descricao' = '" + descricao + '\'' +
-                ", 'Conta= '" + tipo + '\'' +
+        return "{" + printTipo(this.numero, this.descricao) + '\'' +
+                "'Id = '" + id + '\''+
                 ", 'data De Abertura= '" + dataDeAbertura + '\''
                 ;
     }

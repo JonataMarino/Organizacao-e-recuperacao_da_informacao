@@ -1,10 +1,8 @@
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class MeuBancoLegal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        DecimalFormat df = new DecimalFormat("####,##0.00");
         int i = 1;
         while (i == 1) {
             System.out.println("Deseja Criar conta corrente ou poupança?");

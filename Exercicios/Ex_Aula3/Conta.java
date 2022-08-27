@@ -96,7 +96,7 @@ public abstract class Conta implements IConta {
         dataCadastro.set (anoAbertura, mesAbertura, diaAbertura);
         Calendar hoje = Calendar.getInstance();
 
-        int diasAberta = ((dataCadastro.get(Calendar.YEAR) * 12 + dataCadastro.get(Calendar.MONTH) - (hoje.get(Calendar.YEAR) * 12 + hoje.get(Calendar.MONTH)) ));
+        int diasAberta = ( (hoje.get(Calendar.YEAR) *12 + hoje.get(Calendar.MONTH) *30 + hoje.get(Calendar.DAY_OF_MONTH) ) - (dataCadastro.get(Calendar.YEAR) * 12 + dataCadastro.get(Calendar.MONTH) *30 + dataCadastro.get(Calendar.DAY_OF_MONTH)) );
         return diasAberta;
     }
 

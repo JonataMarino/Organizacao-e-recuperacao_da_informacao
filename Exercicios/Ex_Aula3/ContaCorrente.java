@@ -15,7 +15,7 @@ public class ContaCorrente extends Conta{
 
     @Override
     public String toString() {
-        return super.toString()  + ", 'limite' =' " + df.format(limite) + '}';
+        return super.toString()  + ", 'limite' = 'R$" + df.format(limite) + '}';
     }
 }
 

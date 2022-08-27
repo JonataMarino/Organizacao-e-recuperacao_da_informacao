@@ -32,11 +32,17 @@ public class MeuBancoLegal {
                 double limite = sc.nextFloat();
                 cc.setLimite(limite);
 
-                System.out.print("Informe a data de abertura: ");
-                sc.nextLine();
-                String dataAbertura = sc.nextLine();
-                cc.setDataDeAbertura(dataAbertura);
-                cc.printTipo(numero, descricao);
+                System.out.println("Informe a data de abertura: ");
+                System.out.print("Dia: ");
+                int dia = sc.nextInt();
+                cc.setDiaAbertura(dia);
+                System.out.print("Informe o mês de abertura: ");
+                int mes = sc.nextInt();
+                cc.setMesAbertura(mes);
+                System.out.print("Informe o ano de abertura: ");
+                int ano = sc.nextInt();
+                cc.setAnoAbertura(ano);
+
                 System.out.println(cc);
 
             }
@@ -60,11 +66,17 @@ public class MeuBancoLegal {
                 double limite = sc.nextFloat();
                 cp.setLimite(limite);
 
-                System.out.print("Informe a data de abertura: ");
-                sc.nextLine();
-                String dataAbertura = sc.nextLine();
-                cp.setDataDeAbertura(dataAbertura);
-                cp.printTipo(numero, descricao);
+                System.out.println("Informe a data de abertura: ");
+                System.out.print("Dia: ");
+                int dia = sc.nextInt();
+                cp.setDiaAbertura(dia);
+                System.out.print("Informe o mês de abertura: ");
+                int mes = sc.nextInt();
+                cp.setMesAbertura(mes);
+                System.out.print("Informe o ano de abertura: ");
+                int ano = sc.nextInt();
+                cp.setAnoAbertura(ano);
+
                 System.out.println(cp);
 
             }

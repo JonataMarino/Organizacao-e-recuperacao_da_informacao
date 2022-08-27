@@ -3,28 +3,52 @@ public abstract class Conta implements IConta {
 
 
 
-    public Conta(int numero, String descricao, String tipo, String dataDeAbertura){
+    public Conta(int numero, String descricao, String tipo, int diaAbertura, int mesAbertura, int anoAbertura){
         this.numero = numero;
         this.descricao = descricao;
         this.tipo = tipo;
-        this.dataDeAbertura = dataDeAbertura;
+        this.diaAbertura = diaAbertura;
+        this.mesAbertura = mesAbertura;
+        this.anoAbertura = anoAbertura;
+
     }
 
     private int id;
     private int numero;
     private String descricao;
     private String tipo;
-    private String dataDeAbertura;
+    private int diaAbertura;
+    private int mesAbertura;
+    private int anoAbertura;
 
     public int getNumero() {
         return numero;
     }
 
-    @Override
-    public String printTipo(int numero, String descricao) {
-        return "'Numero' = " +this.numero + " 'Descrição': "+ this.descricao+" ";
+
+    public int getDiaAbertura() {
+        return diaAbertura;
     }
 
+    public void setDiaAbertura(int diaAbertura) {
+        this.diaAbertura = diaAbertura;
+    }
+
+    public int getMesAbertura() {
+        return mesAbertura;
+    }
+
+    public void setMesAbertura(int mesAbertura) {
+        this.mesAbertura = mesAbertura;
+    }
+
+    public int getAnoAbertura() {
+        return anoAbertura;
+    }
+
+    public void setAnoAbertura(int anoAbertura) {
+        this.anoAbertura = anoAbertura;
+    }
 
     public void setNumero(int numero) {
         this.numero = numero;
@@ -54,19 +78,23 @@ public abstract class Conta implements IConta {
         this.tipo = tipo;
     }
 
-    public String getDataDeAbertura() {
-        return dataDeAbertura;
+    @Override
+    public String getNumeroContaComTipo(int numeroConta, String descricao) {
+        this.numero = numeroConta;
+        this.descricao = descricao;
+        return "'Conta Numero': " + numero + " 'Tipo': " + descricao;
     }
 
-    public void setDataDeAbertura(String dataDeAbertura) {
-        this.dataDeAbertura = dataDeAbertura;
+    @Override
+    public int getNumeroDiasAberto() {
+        return 0;
     }
 
     @Override
     public String toString() {
-        return "{" + printTipo(this.numero, this.descricao) + '\'' +
-                "'Id = '" + id + '\''+
-                ", 'data De Abertura= '" + dataDeAbertura + '\''
-                ;
+        return "{" + getNumeroContaComTipo(this.numero, this.descricao) + '\'' +
+                " 'Id = '" + id + '\''+
+                ", 'data De Abertura= '" + diaAbertura+"\\"+mesAbertura+"\\"+anoAbertura + '\'' + "\n"
+                + "Sua conta esta a "+ getNumeroDiasAberto() + " dias aberta!";
     }
 }

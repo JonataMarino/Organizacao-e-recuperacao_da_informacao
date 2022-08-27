@@ -26,8 +26,7 @@ public class Tipo {
     @Override
     public String toString() {
         return
-                "'Id' = '" + id + '\'' +
-                ", 'Descricao' = '" + descricao + '\'' +
-                '}';
+                " 'Id' = '" + id + '\'' +
+                ", 'Descrição' = '" + descricao + '\'' + '\'';
     }
 }

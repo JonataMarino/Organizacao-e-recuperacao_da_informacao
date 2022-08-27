@@ -42,7 +42,6 @@ public class MeuBancoLegal {
                 System.out.print("Informe o ano de abertura: ");
                 int ano = sc.nextInt();
                 cc.setAnoAbertura(ano);
-
                 System.out.println(cc);
 
             }
@@ -76,8 +75,8 @@ public class MeuBancoLegal {
                 System.out.print("Informe o ano de abertura: ");
                 int ano = sc.nextInt();
                 cp.setAnoAbertura(ano);
-
                 System.out.println(cp);
+
 
             }
             System.out.println("deseja Registrar outra conta? ");

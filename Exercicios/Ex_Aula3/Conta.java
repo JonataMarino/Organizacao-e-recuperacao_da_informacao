@@ -1,3 +1,5 @@
+import java.util.Calendar;
+
 public abstract class Conta implements IConta {
     public Conta(){}
 
@@ -79,22 +81,30 @@ public abstract class Conta implements IConta {
     }
 
     @Override
-    public String getNumeroContaComTipo(int numeroConta, String descricao) {
+    public String getNumeroContaComTipo(int numeroConta, String tipoConta) {
         this.numero = numeroConta;
-        this.descricao = descricao;
-        return "'Conta Numero': " + numero + " 'Tipo': " + descricao;
+        this.tipo = tipoConta;
+        return "'Conta Numero': '" + numero + "' 'Tipo': '" + tipo;
     }
 
     @Override
-    public int getNumeroDiasAberto() {
-        return 0;
+    public int getNumeroDiasAberto(int diaAbertura, int mesAbertura, int anoAbertura) {
+        Calendar dataCadastro = Calendar.getInstance();
+        this.diaAbertura = diaAbertura;
+        this.mesAbertura = mesAbertura;
+        this.anoAbertura = anoAbertura;
+        dataCadastro.set (anoAbertura, mesAbertura, diaAbertura);
+        Calendar hoje = Calendar.getInstance();
+
+        int diasAberta = ((dataCadastro.get(Calendar.YEAR) * 12 + dataCadastro.get(Calendar.MONTH) - (hoje.get(Calendar.YEAR) * 12 + hoje.get(Calendar.MONTH)) ));
+        return diasAberta;
     }
 
     @Override
     public String toString() {
-        return "{" + getNumeroContaComTipo(this.numero, this.descricao) + '\'' +
-                " 'Id = '" + id + '\''+
+        return "{" + getNumeroContaComTipo(this.numero, this.tipo) + '\'' +
+                new Tipo(this.id, this.descricao) +
                 ", 'data De Abertura= '" + diaAbertura+"\\"+mesAbertura+"\\"+anoAbertura + '\'' + "\n"
-                + "Sua conta esta a "+ getNumeroDiasAberto() + " dias aberta!";
+                + "Sua conta esta a "+ getNumeroDiasAberto(diaAbertura, mesAbertura, anoAbertura) + " dias aberta!";
     }
 }

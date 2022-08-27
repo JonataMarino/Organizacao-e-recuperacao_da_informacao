@@ -1,9 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.text.DecimalFormat;
 
 public class ContaCorrente extends Conta{
-    private int id;
     private double limite;
+
+    DecimalFormat df = new DecimalFormat("####,##0.00");
 
     public double getLimite() {
         return limite;
@@ -12,11 +12,10 @@ public class ContaCorrente extends Conta{
     public void setLimite(double limite) {
         this.limite = limite;
     }
-List<ContaCorrente> contacorrente = new ArrayList<ContaCorrente>();
 
     @Override
     public String toString() {
-        return super.toString()  + ", 'limite' =' " + limite + '}';
+        return super.toString()  + ", 'limite' =' " + df.format(limite) + '}';
     }
 }
 

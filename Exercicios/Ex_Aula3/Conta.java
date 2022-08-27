@@ -104,7 +104,7 @@ public abstract class Conta implements IConta {
     public String toString() {
         return "{" + getNumeroContaComTipo(this.numero, this.tipo) + '\'' +
                 new Tipo(this.id, this.descricao) +
-                ", 'data De Abertura= '" + diaAbertura+"\\"+mesAbertura+"\\"+anoAbertura + '\'' + "\n"
-                + "Sua conta esta a "+ getNumeroDiasAberto(diaAbertura, mesAbertura, anoAbertura) + " dias aberta!";
+                ", 'data De Abertura= '" + diaAbertura+"\\"+mesAbertura+"\\"+anoAbertura + '\'' + "}\n"
+                + "{Sua conta esta a "+ getNumeroDiasAberto(diaAbertura, mesAbertura, anoAbertura) + " dias aberta!";
     }
 }

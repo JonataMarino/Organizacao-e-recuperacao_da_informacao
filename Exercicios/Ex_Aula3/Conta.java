@@ -1,18 +1,20 @@
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
+import java.util.Date;
 
 public abstract class Conta implements IConta {
     public Conta(){}
 
 
 
-    public Conta(int numero, String descricao, String tipo, int diaAbertura, int mesAbertura, int anoAbertura){
+    public Conta(int numero, String descricao, String tipo, Date dataAbertura, int diaAbertura, int mesAbertura, int anoAbertura){
         this.numero = numero;
         this.descricao = descricao;
         this.tipo = tipo;
         this.diaAbertura = diaAbertura;
         this.mesAbertura = mesAbertura;
         this.anoAbertura = anoAbertura;
-
+        this.dataAbertura = dataAbertura;
     }
 
     private int id;
@@ -23,34 +25,14 @@ public abstract class Conta implements IConta {
     private int mesAbertura;
     private int anoAbertura;
 
+    private Date dataAbertura;
+
+
+
     public int getNumero() {
         return numero;
     }
 
-
-    public int getDiaAbertura() {
-        return diaAbertura;
-    }
-
-    public void setDiaAbertura(int diaAbertura) {
-        this.diaAbertura = diaAbertura;
-    }
-
-    public int getMesAbertura() {
-        return mesAbertura;
-    }
-
-    public void setMesAbertura(int mesAbertura) {
-        this.mesAbertura = mesAbertura;
-    }
-
-    public int getAnoAbertura() {
-        return anoAbertura;
-    }
-
-    public void setAnoAbertura(int anoAbertura) {
-        this.anoAbertura = anoAbertura;
-    }
 
     public void setNumero(int numero) {
         this.numero = numero;
@@ -80,6 +62,38 @@ public abstract class Conta implements IConta {
         this.tipo = tipo;
     }
 
+    public int getDiaAbertura() {
+        return diaAbertura;
+    }
+
+    public void setDiaAbertura(int diaAbertura) {
+        this.diaAbertura = diaAbertura;
+    }
+
+    public int getMesAbertura() {
+        return mesAbertura;
+    }
+
+    public void setMesAbertura(int mesAbertura) {
+        this.mesAbertura = mesAbertura;
+    }
+
+    public int getAnoAbertura() {
+        return anoAbertura;
+    }
+
+    public void setAnoAbertura(int anoAbertura) {
+        this.anoAbertura = anoAbertura;
+    }
+
+    public Date getDataAbertura() {
+        return dataAbertura;
+    }
+
+    public void setDataAbertura(Date dataAbertura) {
+        this.dataAbertura = dataAbertura;
+    }
+
     @Override
     public String getNumeroContaComTipo(int numeroConta, String tipoConta) {
         this.numero = numeroConta;
@@ -88,23 +102,16 @@ public abstract class Conta implements IConta {
     }
 
     @Override
-    public int getNumeroDiasAberto(int diaAbertura, int mesAbertura, int anoAbertura) {
-        Calendar dataCadastro = Calendar.getInstance();
-        this.diaAbertura = diaAbertura;
-        this.mesAbertura = mesAbertura;
-        this.anoAbertura = anoAbertura;
-        dataCadastro.set (anoAbertura, mesAbertura, diaAbertura);
-        Calendar hoje = Calendar.getInstance();
-
-        int diasAberta = ( (hoje.get(Calendar.YEAR) *12 + hoje.get(Calendar.MONTH) *30 + hoje.get(Calendar.DAY_OF_MONTH) ) - (dataCadastro.get(Calendar.YEAR) * 12 + dataCadastro.get(Calendar.MONTH) *30 + dataCadastro.get(Calendar.DAY_OF_MONTH)) );
-        return diasAberta;
+    public int getNumeroDiasAberto(Date diaAbertura) {
+        Date dataAtual = Date.from(Calendar.getInstance().toInstant());
+        return (int) ChronoUnit.DAYS.between(dataAtual.toInstant(), getDataAbertura().toInstant());
     }
 
     @Override
     public String toString() {
-        return "{" + getNumeroContaComTipo(this.numero, this.tipo) + '\'' +
-                new Tipo(this.id, this.descricao) +
-                ", 'data De Abertura= '" + diaAbertura+"\\"+mesAbertura+"\\"+anoAbertura + '\'' + "}\n"
-                + "{Sua conta esta a "+ getNumeroDiasAberto(diaAbertura, mesAbertura, anoAbertura) + " dias aberta!";
+        return "{" + getNumeroContaComTipo(this.getNumero(), this.getTipo()) + '\'' +
+                new Tipo(this.getId(), this.getDescricao()) +
+                ", 'data De Abertura' = '" + getDiaAbertura() +  "\\" + getMesAbertura() + "\\" + getAnoAbertura()+ '\'' + " }\n"
+                + "{Sua conta esta a "+ getNumeroDiasAberto(getDataAbertura()) + " dias aberta!";
     }
 }

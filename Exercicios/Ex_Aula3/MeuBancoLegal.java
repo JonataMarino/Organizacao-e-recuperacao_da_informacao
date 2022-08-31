@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Scanner;
 
 public class MeuBancoLegal {
@@ -6,13 +8,15 @@ public class MeuBancoLegal {
 
         int i = 1;
         while (i == 1) {
+            Calendar calendar = Calendar.getInstance();
             System.out.println("Deseja Criar conta corrente ou poupança?");
             System.out.print("Digite 1 para conta corrente| Digite 2 para conta poupança: ");
             int decision = sc.nextInt();
             if (decision == 1) {
                 ContaCorrente cc = new ContaCorrente();
                 cc.setTipo("Conta Corrente");
-
+                Calendar abertura = Calendar.getInstance();
+                SimpleDateFormat dataFormat = new SimpleDateFormat("dd/MM/yyyy");
 
                 System.out.print("Descrição da conta - Universitária, Pessoa Física, pessoa Jurídica: ");
                 sc.nextLine();
@@ -30,7 +34,6 @@ public class MeuBancoLegal {
                 System.out.print("informe o limite de saque da conta: ");
                 double limite = sc.nextFloat();
                 cc.setLimite(limite);
-
                 System.out.println("Informe a data de abertura: ");
                 System.out.print("Dia: ");
                 int dia = sc.nextInt();
@@ -41,11 +44,16 @@ public class MeuBancoLegal {
                 System.out.print("Informe o ano de abertura: ");
                 int ano = sc.nextInt();
                 cc.setAnoAbertura(ano);
+                abertura.set(dia, mes, ano);
+                cc.setDataAbertura(abertura.getTime());
                 System.out.println(cc);
+
+
 
             }
             else if (decision == 2){
                 ContaPoupanca cp = new ContaPoupanca();
+                Calendar abertura = Calendar.getInstance();
                 cp.setTipo("Conta Poupança");
                 System.out.print("Informe um ID para a nova conta: ");
                 int id = sc.nextInt();
@@ -74,6 +82,8 @@ public class MeuBancoLegal {
                 System.out.print("Informe o ano de abertura: ");
                 int ano = sc.nextInt();
                 cp.setAnoAbertura(ano);
+                abertura.set(ano, mes, dia);
+                cp.setDataAbertura(abertura.getTime());
                 System.out.println(cp);
 
 

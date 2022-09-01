@@ -1,3 +1,4 @@
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Scanner;
@@ -45,7 +46,7 @@ public class MeuBancoLegal {
                 int ano = sc.nextInt();
                 cc.setAnoAbertura(ano);
                 abertura.set(dia, mes, ano);
-                cc.setDataAbertura(abertura.getTime());
+                cc.setDataAbertura(Date.from(abertura.toInstant()));
                 System.out.println(cc);
 
 
@@ -83,7 +84,7 @@ public class MeuBancoLegal {
                 int ano = sc.nextInt();
                 cp.setAnoAbertura(ano);
                 abertura.set(ano, mes, dia);
-                cp.setDataAbertura(abertura.getTime());
+                cp.setDataAbertura(Date.from(abertura.toInstant()));
                 System.out.println(cp);
 
 

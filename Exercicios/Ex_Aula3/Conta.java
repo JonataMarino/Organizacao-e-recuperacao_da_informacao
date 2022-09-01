@@ -104,7 +104,8 @@ public abstract class Conta implements IConta {
     @Override
     public int getNumeroDiasAberto(Date diaAbertura) {
         Date dataAtual = Date.from(Calendar.getInstance().toInstant());
-        return (int) ChronoUnit.DAYS.between(dataAtual.toInstant(), getDataAbertura().toInstant());
+        System.out.println(dataAtual);
+        return (int) (ChronoUnit.DAYS.between(getDataAbertura().toInstant(), dataAtual.toInstant()));
     }
 
     @Override

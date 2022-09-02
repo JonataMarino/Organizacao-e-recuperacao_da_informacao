@@ -8,14 +8,15 @@ public class ContaPoupanca extends Conta{
         return limite;
     }
 
+    public void setLimite(double limite) {
+        this.limite = limite;
+    }
+
     @Override
     public void gerarLogTxt(String path) {
 
     }
 
-    public void setLimite(double limite) {
-        this.limite = limite;
-    }
     @Override
     public String toString() {
         return super.toString()  + ", 'limite' = 'R$" + df.format(limite) + '}';

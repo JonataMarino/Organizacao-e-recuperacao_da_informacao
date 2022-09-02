@@ -86,6 +86,7 @@ public class MeuBancoLegal {
                 cp.setDataAbertura(Date.from(abertura.toInstant()));
                 System.out.println(cp);
                 cp.gerarLogTxt(cp.getId(), cp.getNumero(), cp.getTipo(),cp.getDescricao(), cp.getDataAbertura());
+
             }
 
                 System.out.println("deseja Registrar outra conta? ");

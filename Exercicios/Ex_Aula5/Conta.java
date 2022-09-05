@@ -1,9 +1,7 @@
 import java.io.*;
-import java.nio.Buffer;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Scanner;
 
 public abstract class Conta implements IConta {
     public Conta() {

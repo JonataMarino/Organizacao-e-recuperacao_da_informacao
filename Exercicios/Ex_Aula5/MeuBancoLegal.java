@@ -12,7 +12,7 @@ public class MeuBancoLegal {
         int i = 1;
         while (i == 1) {
             System.out.println("Deseja Criar conta corrente ou poupança?");
-            System.out.print("Digite 1 para conta corrente| Digite 2 para conta poupança: ");
+            System.out.print("Digite 1 para conta corrente | Digite 2 para conta poupança: ");
             int decision = sc.nextInt();
             if (decision == 1) {
                 ContaCorrente cc = new ContaCorrente();
@@ -88,7 +88,6 @@ public class MeuBancoLegal {
                 cp.gerarLogTxt(cp.getId(), cp.getNumero(), cp.getTipo(), cp.getDescricao(), cp.getDataAbertura());
                 cp.leitor(path);
                 }
-            }
                 System.out.println("deseja Registrar outra conta? ");
                 System.out.print("digite 1 para sim e 0 para não: ");
                 i = sc.nextInt();
@@ -97,6 +96,7 @@ public class MeuBancoLegal {
                     System.out.print("digite 1 para sim e 0 para não: ");
                     i = sc.nextInt();
                 }
-            }
         }
+    }
+}
 

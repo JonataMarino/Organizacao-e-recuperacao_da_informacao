@@ -119,7 +119,6 @@ public abstract class Conta implements IConta {
 
     public void gerarLogTxt(int id, int numero, String tipo, String descricao, Date dataAbertura){
         String path = "D:\\Logatti 6º Semestre\\Organização e recuperação da Informação\\Exercicios\\Ex_Aula5\\txt\\contas.txt";
-        Scanner ler = new Scanner(System.in);
 
         this.id = id;
         this.numero = numero;
@@ -162,4 +161,6 @@ public abstract class Conta implements IConta {
         }
         buffRead.close();
     }
+
+
 }

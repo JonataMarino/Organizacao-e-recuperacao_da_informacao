@@ -4,10 +4,10 @@ import java.util.Calendar;
 import java.util.Scanner;
 
 public class MeuBancoLegal {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
 
-        String path = "D:\\Logatti 6º Semestre\\Organização e recuperação da Informação\\Exercicios\\Ex_Aula5\\txt\\meuBancoLegal.txt";
+        String path = "D:\\Logatti 6º Semestre\\Organização e recuperação da Informação\\Exercicios\\Ex_Aula5\\txt\\contas.txt";
 
         int i = 1;
         while (i == 1) {
@@ -48,10 +48,10 @@ public class MeuBancoLegal {
                 abertura.set(dia, mes, ano);
                 cc.setDataAbertura(Date.from(abertura.toInstant()));
                 System.out.println(cc);
-                cc.gerarLogTxt(cc.getId(), cc.getNumero(), cc.getTipo(),cc.getDescricao(), cc.getDataAbertura());
-            }
+                cc.gerarLogTxt(cc.getId(), cc.getNumero(), cc.getTipo(), cc.getDescricao(), cc.getDataAbertura());
+                cc.leitor(path);
 
-            else if (decision == 2){
+            } else if (decision == 2) {
                 ContaPoupanca cp = new ContaPoupanca();
                 Calendar abertura = Calendar.getInstance();
                 cp.setTipo("Conta Poupança");
@@ -85,19 +85,18 @@ public class MeuBancoLegal {
                 abertura.set(ano, mes, dia);
                 cp.setDataAbertura(Date.from(abertura.toInstant()));
                 System.out.println(cp);
-                cp.gerarLogTxt(cp.getId(), cp.getNumero(), cp.getTipo(),cp.getDescricao(), cp.getDataAbertura());
-
+                cp.gerarLogTxt(cp.getId(), cp.getNumero(), cp.getTipo(), cp.getDescricao(), cp.getDataAbertura());
+                cp.leitor(path);
+                }
             }
-
                 System.out.println("deseja Registrar outra conta? ");
                 System.out.print("digite 1 para sim e 0 para não: ");
                 i = sc.nextInt();
-                while (i < 0 || i >1 ){
+                while (i < 0 || i > 1) {
                     System.out.println("deseja Registrar outra conta? ");
                     System.out.print("digite 1 para sim e 0 para não: ");
                     i = sc.nextInt();
                 }
+            }
         }
-    }
-}
 

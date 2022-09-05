@@ -9,20 +9,20 @@ public interface IConta{
 
     int getNumeroDiasAberto(Date diaAbertura);
 
-     void gerarLogTxt (String path);
+    void gerarLogTxt (String path);
 
-    static void leitor(String path) throws IOException {
-        BufferedReader buffRead = new BufferedReader(new FileReader(path));
-        String linha = "";
-        while (true){
-            if (linha != null){
-                System.out.println(linha);
-            }else
-                break;
-            linha = buffRead.readLine();
+    public static void leitor(String path) throws IOException {
+            BufferedReader buffRead = new BufferedReader(new FileReader(path));
+            String linha = "";
+            while (true) {
+                if (linha != null) {
+                    System.out.println(linha);
+                } else
+                    break;
+                linha = buffRead.readLine();
+            }
+            buffRead.close();
         }
-        buffRead.close();
     }
 
-}
 

@@ -25,6 +25,15 @@ public abstract class Conta implements IConta {
     private int diaAbertura;
     private int mesAbertura;
     private int anoAbertura;
+    private int diff;
+
+    public int getDiff() {
+        return diff;
+    }
+
+    public void setDiff(int diff) {
+        this.diff = diff;
+    }
 
     private Date dataAbertura;
 
@@ -112,7 +121,7 @@ public abstract class Conta implements IConta {
         return "{" + getNumeroContaComTipo(this.getNumero(), this.getTipo()) + '\'' +
                 new Tipo(this.getId(), this.getDescricao()) +
                 ", 'data De Abertura' = '" + getDiaAbertura() + "\\" + getMesAbertura() + "\\" + getAnoAbertura() + '\'' + " }\n"
-                + "{Sua conta esta a " + getNumeroDiasAberto(getDataAbertura()) + " dias aberta!";
+                + "{Sua conta esta a " + getDiff() + " dias aberta!";
     }
 
     public void gerarLogTxt(int id, int numero, String tipo, String descricao, Date dataAbertura){

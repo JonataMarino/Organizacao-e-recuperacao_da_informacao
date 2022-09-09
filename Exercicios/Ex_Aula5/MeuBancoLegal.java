@@ -1,5 +1,4 @@
 import java.io.*;
-import java.sql.Date;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Calendar;
@@ -49,13 +48,16 @@ public class MeuBancoLegal {
                 int ano = sc.nextInt();
                 cc.setAnoAbertura(ano);
                 abertura.set(dia, mes, ano);
-                //int diff = Period.between(abertura, dt).getDays();
+                LocalDate inputDate = LocalDate.parse(abertura.toString());
+                int diff = Period.between(inputDate, dt).getDays();
+                cc.setDiff(diff);
                 System.out.println(cc);
                 cc.gerarLogTxt(cc.getId(), cc.getNumero(), cc.getTipo(), cc.getDescricao(), cc.getDataAbertura());
                 cc.leitor(path);
 
             } else if (decision == 2) {
                 ContaPoupanca cp = new ContaPoupanca();
+                LocalDate dt = LocalDate.now();
                 Calendar abertura = Calendar.getInstance();
                 cp.setTipo("Conta Poupança");
                 System.out.print("Informe um ID para a nova conta: ");
@@ -86,7 +88,9 @@ public class MeuBancoLegal {
                 int ano = sc.nextInt();
                 cp.setAnoAbertura(ano);
                 abertura.set(ano, mes, dia);
-                cp.setDataAbertura(Date.from(abertura.toInstant()));
+                LocalDate inputDate = LocalDate.parse(abertura.toString());
+                int diff = Period.between(inputDate, dt).getDays();
+                cp.setDiff(diff);
                 System.out.println(cp);
                 cp.gerarLogTxt(cp.getId(), cp.getNumero(), cp.getTipo(), cp.getDescricao(), cp.getDataAbertura());
                 cp.leitor(path);

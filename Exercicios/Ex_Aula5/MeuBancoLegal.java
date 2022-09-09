@@ -1,5 +1,7 @@
 import java.io.*;
 import java.sql.Date;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Calendar;
 import java.util.Scanner;
 
@@ -17,6 +19,7 @@ public class MeuBancoLegal {
             if (decision == 1) {
                 ContaCorrente cc = new ContaCorrente();
                 cc.setTipo("Conta Corrente");
+                LocalDate dt = LocalDate.now();
                 Calendar abertura = Calendar.getInstance();
 
                 System.out.print("Descrição da conta - Universitária, Pessoa Física, pessoa Jurídica: ");
@@ -46,7 +49,7 @@ public class MeuBancoLegal {
                 int ano = sc.nextInt();
                 cc.setAnoAbertura(ano);
                 abertura.set(dia, mes, ano);
-                cc.setDataAbertura(Date.from(abertura.toInstant()));
+                //int diff = Period.between(abertura, dt).getDays();
                 System.out.println(cc);
                 cc.gerarLogTxt(cc.getId(), cc.getNumero(), cc.getTipo(), cc.getDescricao(), cc.getDataAbertura());
                 cc.leitor(path);

@@ -4,13 +4,12 @@
 .classpath
 .project
 .settings
-
+*.txt
 *.class
 
 # Package Files #
 *.jar
 *.war
 *.ear
-*.txt
 *.iml
 *.idea

@@ -1,2 +1,2 @@
-Dados do Cliente: 'id': '123' 'Número da conta': '111222' 'Tipo da conta': Conta Corrente' 'Descrição': 'Universitaria' 'Data da Abertura': Thu Jan 14 12:56:47 BRT 12'
+Dados do Cliente: 'id': '1' 'Número da conta': '123' 'Tipo da conta': Conta Corrente' 'Descrição': 'Universitária' 'Data da Abertura': Mon Sep 11 20:55:38 BRT 24'
 +----------------------------------------------------------------+

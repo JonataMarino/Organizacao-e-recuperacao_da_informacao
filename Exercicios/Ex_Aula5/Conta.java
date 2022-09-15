@@ -8,7 +8,7 @@ public abstract class Conta implements IConta {
     }
 
 
-    public Conta(int numero, String descricao, String tipo, Date dataAbertura, int diaAbertura, int mesAbertura, int anoAbertura) {
+    public Conta(int numero, String descricao, String tipo, Date dataAbertura, String diaAbertura, String mesAbertura, String anoAbertura) {
         this.numero = numero;
         this.descricao = descricao;
         this.tipo = tipo;
@@ -22,9 +22,9 @@ public abstract class Conta implements IConta {
     private int numero;
     private String descricao;
     private String tipo;
-    private int diaAbertura;
-    private int mesAbertura;
-    private int anoAbertura;
+    private String diaAbertura;
+    private String mesAbertura;
+    private String anoAbertura;
     private int diff;
 
     public int getDiff() {
@@ -70,27 +70,27 @@ public abstract class Conta implements IConta {
         this.tipo = tipo;
     }
 
-    public int getDiaAbertura() {
+    public String getDiaAbertura() {
         return diaAbertura;
     }
 
-    public void setDiaAbertura(int diaAbertura) {
+    public void setDiaAbertura(String diaAbertura) {
         this.diaAbertura = diaAbertura;
     }
 
-    public int getMesAbertura() {
+    public String getMesAbertura() {
         return mesAbertura;
     }
 
-    public void setMesAbertura(int mesAbertura) {
+    public void setMesAbertura(String mesAbertura) {
         this.mesAbertura = mesAbertura;
     }
 
-    public int getAnoAbertura() {
+    public String getAnoAbertura() {
         return anoAbertura;
     }
 
-    public void setAnoAbertura(int anoAbertura) {
+    public void setAnoAbertura(String anoAbertura) {
         this.anoAbertura = anoAbertura;
     }
 

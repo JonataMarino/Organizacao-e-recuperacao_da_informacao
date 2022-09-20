@@ -8,7 +8,7 @@ public class Cadastro {
 
     private int codigo;
     private String titulo;
-    private String subtitlulo;
+    private String subtitulo;
     private String informacao;
     private String unidade;
     private String estado_conservacao;
@@ -21,9 +21,9 @@ public class Cadastro {
     private Date data_limite_cessao;
 
     public Cadastro(){}
-    List<Cadastro> cadacervo = new ArrayList<Cadastro>();
+    static List<Cadastro> cadacervo = new ArrayList<Cadastro>();
 
-    public List<Cadastro> getCadacervo() {
+    public  List<Cadastro> getCadacervo() {
         return cadacervo;
     }
 
@@ -47,12 +47,12 @@ public class Cadastro {
         this.titulo = titulo;
     }
 
-    public String getSubtitlulo() {
-        return subtitlulo;
+    public String getSubtitulo() {
+        return subtitulo;
     }
 
-    public void setSubtitlulo(String subtitlulo) {
-        this.subtitlulo = subtitlulo;
+    public void setSubtitulo(String subtitulo) {
+        this.subtitulo = subtitulo;
     }
 
     public String getInformacao() {
@@ -134,4 +134,24 @@ public class Cadastro {
     public void setData_limite_cessao(Date data_limite_cessao) {
         this.data_limite_cessao = data_limite_cessao;
     }
+
+    public void gerarDadosDB(int codigo, String titulo, String subtitulo, String informacao, String unidade, String estado_conservacao, String situacao, int numero_tombamento, String subcolecao, String tipologia, String cedido_a, Date data_limite_cessao){
+        String column = "D:\\Logatti 6º Semestre\\Organização e recuperação da Informação\\Exercicios\\Atividade Aula pratica\\acervo_museologico\\csv\\acervoartepecasdocshistoricos.csv";
+        this.codigo = codigo;
+        this.titulo = titulo;
+        this.subtitulo = subtitulo;
+        this.informacao = informacao;
+        this.unidade = unidade;
+        this.estado_conservacao = estado_conservacao;
+        this.situacao = situacao;
+        this.numero_tombamento = numero_tombamento;
+        this.colecao = colecao;
+        this.subcolecao = subcolecao;
+        this.tipologia = tipologia;
+        this.cedido_a = cedido_a;
+        this.data_limite_cessao = data_limite_cessao;
+
+
+    }
+
 }

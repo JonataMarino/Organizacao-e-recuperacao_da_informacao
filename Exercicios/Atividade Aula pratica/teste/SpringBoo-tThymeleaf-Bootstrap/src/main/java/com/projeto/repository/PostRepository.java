@@ -1,6 +1,6 @@
-package repository;
+package com.projeto.repository;
 
-import model.Post;
+import com.projeto.model.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

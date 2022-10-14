@@ -1,9 +1,9 @@
-package service;
+package com.projeto.service;
 
-import model.Post;
+import com.projeto.model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.PostRepository;
+import com.projeto.repository.PostRepository;
 
 import java.util.List;
 

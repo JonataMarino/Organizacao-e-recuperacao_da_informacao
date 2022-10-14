@@ -32,7 +32,7 @@
           <div class="form-group row">
             <div class="col-md-4" th:classappend="${#fields.hasErrors('autor')}? 'has-error'">
               <label>Autor</label>
-              <input type="text" class="form-control input-sm" th:field="*{autor}" autofocus="autofocus" placeholder="Informe o autor" maxlength="50"/>
+              <input type="text" class="form-control input-sm" th:field="*{autor}" autofocus="autofocus" placeholder="Informe o autor" maxlength="150"/>
             </div>
           </div>
           <div class="form-group row">
@@ -42,9 +42,9 @@
             </div>
           </div>
           <div class="form-group row">
-            <div class="col-md-2" th:classappend="${#fields.hasErrors('data')}? 'has-error'">
-              <label>Data</label>
-              <input type="date" class="form-control input-sm" th:field="*{data}"/>
+            <div class="col-md-2" th:classappend="${#fields.hasErrors('date')}? 'has-error'">
+             <label>Data</label>
+              <input type="date" class="form-control input-sm" th:field="*{date}"/>
             </div>
           </div>
           <div class="form-group row">

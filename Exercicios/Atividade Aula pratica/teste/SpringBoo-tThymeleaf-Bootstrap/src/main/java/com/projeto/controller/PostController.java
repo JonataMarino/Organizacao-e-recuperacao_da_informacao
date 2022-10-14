@@ -1,16 +1,15 @@
-package controller;
+package com.projeto.controller;
 
 
-import model.Post;
+import com.projeto.model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
-import service.PostService;
+import com.projeto.service.PostService;
 
 import javax.validation.Valid;
 
@@ -33,9 +32,9 @@ public class PostController {
 
         //Vai para a tela de adição de posts
 
-    @GetMapping("/add")
+    @GetMapping("/postAdd")
     public ModelAndView add(Post post){
-        ModelAndView mv = new ModelAndView("/add");
+        ModelAndView mv = new ModelAndView("/postAdd");
             mv.addObject("posts", post);
 
             return mv;

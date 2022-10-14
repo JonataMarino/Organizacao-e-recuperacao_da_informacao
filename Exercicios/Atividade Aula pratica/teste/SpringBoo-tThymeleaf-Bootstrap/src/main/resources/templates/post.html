@@ -30,7 +30,7 @@
                     <td th:text="${post.id}"></td>
                     <td th:text="${post.autor}"></td>
                     <td th:text="${post.titulo}"></td>
-                    <td th:text="${#dates.format(post.data, 'dd/MM/yyyy')}"></td>
+                    <td th:text="${#dates.format(post.date, 'dd/MM/yyyy')}"></td>
                     <td>
                         <div class="btn-group pull-right">
                             <a class="btn btn-sm btn-primary" th:href="@{/edit/{id}(id=${post.id})}" >Editar</a>
@@ -43,7 +43,7 @@
         </div>
     </div>
     <div class="panel-footer">
-        <a class="btn btn-sm btn-success" th:href="@{/add/}" >Adicionar</a>
+        <a class="btn btn-sm btn-success" th:href="@{/postAdd/}" >Adicionar</a>
     </div>
 </div>
 </body>

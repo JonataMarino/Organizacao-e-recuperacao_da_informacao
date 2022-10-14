@@ -1,9 +1,8 @@
-package model;
+package com.projeto.model;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,13 +13,10 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.format.annotation.DateTimeFormat;
-
 import java.io.Serializable;
 import java.util.Date;
 
-    @Entity (name = tbl_post) //define o nome da tabela que sera criada no banco de dados
+    @Entity (name = "tbl_post") //define o nome da tabela que sera criada no banco de dados
 
     public class Post implements Serializable {
         private static final long serialVersionUID = 1L;

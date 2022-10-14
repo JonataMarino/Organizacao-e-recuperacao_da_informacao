@@ -40,7 +40,7 @@ import java.util.Date;
 
         @Column(nullable = false)
         @Temporal(TemporalType.DATE)
-        @DateTimeFormat(pattern = "yyyy/MM/dd")
+        @DateTimeFormat(pattern = "yyyy-MM-dd")
         @NotNull(message = "Data é uma informação obrigatória")
         private Date date;
 

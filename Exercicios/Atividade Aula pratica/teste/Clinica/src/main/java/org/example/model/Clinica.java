@@ -3,12 +3,11 @@ package org.example.model;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
+
+@Entity(name = "tbl_clinica") //define o nome da tabela que sera criada no banco de dados
 public class Clinica implements Serializable  {
     private static final long serialVersionUID = 1L;
 
@@ -35,9 +34,8 @@ public class Clinica implements Serializable  {
 
     @Column(nullable = false, length = 150) //define o tamanho da coluna
     @NotBlank (message = "Endereço da Clínica é uma informação obrigatória")
-    private EnderecoClinica adress;
+    private String adress;
 
-    private Especialidade espc;
 
     public Long getId() {
         return id;
@@ -79,22 +77,14 @@ public class Clinica implements Serializable  {
         this.especialidade = especialidade;
     }
 
-    public EnderecoClinica getAdress() {
+    public String getAdress() {
         return adress;
     }
 
-    public void setAdress(EnderecoClinica adress) {
+    public void setAdress(String adress) {
         this.adress = adress;
     }
 
-    public Especialidade getEspc() {
-
-        return espc;
-    }
-
-    public void setEspc(Especialidade espc) {
-        this.espc = espc;
-    }
 }
 
 

@@ -23,7 +23,7 @@ public class clinicaController {
     @GetMapping("/")
     public ModelAndView findAll() {
         ModelAndView mv = new ModelAndView("/clinica");
-        mv.addObject("clinicas", service.findAll());
+        mv.addObject("clinica", service.findAll());
         return mv;
     }
 
@@ -53,5 +53,5 @@ public class clinicaController {
         service.save(clinica);
         return findAll();
     }
-    
+
 }

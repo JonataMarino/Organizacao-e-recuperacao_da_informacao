@@ -7,4 +7,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface clinicaRepository extends JpaRepository<Clinica, Long> {}
 
-//estende o JpaRepository e declara a Entidade modelClinica e o tipo de chave primária
+//estende o JpaRepository e declara a Entidade Clinica e o tipo de chave primária

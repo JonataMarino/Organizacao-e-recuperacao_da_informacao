@@ -10,12 +10,12 @@ import java.util.Date;
 
 public abstract class Pessoa {
 
-    static final long serialVersionUID = 1L;
+   /* static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue( strategy = GenerationType.AUTO)
     @Column(nullable = false, length = 150) //define o tamanho da coluna
     @NotBlank(message = "Nome da Clínica é uma informação obrigatória")
-    private long id;
+    private long id;*/
 
     @Column(nullable = false, length = 150) //define o tamanho da coluna
     @NotBlank (message = "Nome da Clínica é uma informação obrigatória")
@@ -37,14 +37,15 @@ public abstract class Pessoa {
     @NotBlank (message = "Nome da Clínica é uma informação obrigatória")
     private Date dataNasc;
 
-    public long getId() {
+   /* public long getId() {
+
         return id;
     }
 
     public void setId(long id) {
         this.id = id;
     }
-
+*/
     public String getNome() {
         return nome;
     }

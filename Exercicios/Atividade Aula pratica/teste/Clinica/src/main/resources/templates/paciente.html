@@ -22,26 +22,26 @@
                     <th>Nome</th>
                     <th>Telefone</th>
                     <th>Email</th>
-                    <th>Especialidade</th>
                     <th>Endereço</th>
-                    <th>Pacientes</th>
+                    <th>Nascimento</th>
+                    <th>Voltar</th>
                     <th>Ações</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="clinica : ${clinica}">
-                    <td th:text="${clinica.id}"></td>
-                    <td th:text="${clinica.nome}"></td>
-                    <td th:text="${clinica.telefone}"></td>
-                    <td th:text="${clinica.email}"></td>
-                    <td th:text="${clinica.especialidade}"></td>
-                    <td th:text="${clinica.adress}"></td>
-                    <td><a class="btn btn-sm btn-primary" th:href="@{/paciente}" >Acessar</a></td>
+                <tr th:each="paciente : ${paciente}">
+                    <td th:text="${paciente.id}"></td>
+                    <td th:text="${paciente.nome}"></td>
+                    <td th:text="${paciente.telefone}"></td>
+                    <td th:text="${paciente.email}"></td>
+                    <td th:text="${paciente.endereco}"></td>
+                    <td th:text="${paciente.dataNasc}"></td>
+                    <td><a class="btn btn-sm btn-primary" th:href="@{/clinica}" ></a></td>
 
                     <td>
                         <div class="btn-group pull-right">
-                            <a class="btn btn-sm btn-primary" th:href="@{/edit/{id}(id=${clinica.id})}" >Editar</a>
-                            <a class="delete btn btn-sm btn-danger" th:href="@{/delete/{id}(id=${clinica.id})}">Excluir</a>
+                            <a class="btn btn-sm btn-primary" th:href="@{/edit/{id}(id=${paciente.id})}" >Editar</a>
+                            <a class="delete btn btn-sm btn-danger" th:href="@{/delete/{id}(id=${paciente.id})}">Excluir</a>
                         </div>
                     </td>
                 </tr>
@@ -50,7 +50,7 @@
         </div>
     </div>
     <div class="panel-footer">
-        <a class="btn btn-sm btn-success" th:href="@{/clinicaAdd/}" >Adicionar</a>
+        <a class="btn btn-sm btn-success" th:href="@{/pacienteAdd/}" >Adicionar</a>
     </div>
 </div>
 </body>

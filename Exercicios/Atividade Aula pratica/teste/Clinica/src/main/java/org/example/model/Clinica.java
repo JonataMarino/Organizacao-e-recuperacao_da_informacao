@@ -2,7 +2,6 @@ package org.example.model;
 
 
 import org.hibernate.validator.constraints.NotBlank;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -36,6 +35,16 @@ public class Clinica implements Serializable  {
     @NotBlank (message = "Endereço da Clínica é uma informação obrigatória")
     private String adress;
 
+    @ManyToOne
+    private Paciente paciente;
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
 
     public Long getId() {
         return id;

@@ -8,14 +8,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 @Controller
 public class ClinicaController {
@@ -38,6 +33,14 @@ public class ClinicaController {
         mv.addObject("clinicas", clinica);
         return mv;
     }
+
+    @GetMapping("/clinicaEdit/{id}")
+    public ModelAndView update (@PathVariable("id") long id){
+        ModelAndView mv = new ModelAndView("/clinicaEdit");
+        mv.addObject("clinica", service.findOne(id));
+        return mv;
+    }
+
 
 
     @GetMapping("/delete/{id}")

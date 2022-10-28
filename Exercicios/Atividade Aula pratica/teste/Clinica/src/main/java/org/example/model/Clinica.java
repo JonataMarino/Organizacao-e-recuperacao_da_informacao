@@ -35,17 +35,6 @@ public class Clinica implements Serializable  {
     @NotBlank (message = "Endereço da Clínica é uma informação obrigatória")
     private String adress;
 
-    @ManyToOne
-    private Paciente paciente;
-
-    public Paciente getPaciente() {
-        return paciente;
-    }
-
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
-    }
-
     public Long getId() {
         return id;
     }

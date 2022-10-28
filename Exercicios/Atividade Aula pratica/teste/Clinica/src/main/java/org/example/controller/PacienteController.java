@@ -1,6 +1,8 @@
 package org.example.controller;
 
+import org.example.model.Clinica;
 import org.example.model.Paciente;
+import org.example.service.ClinicaService;
 import org.example.service.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +19,10 @@ public class PacienteController {
 
     @Autowired
     private PacienteService service; // injeta a classe de serviços
+
+    @Autowired
+    private ClinicaService clinicaService;
+
     @GetMapping("/paciente")
     public ModelAndView findAll() {
         ModelAndView mv = new ModelAndView("/paciente");
@@ -32,11 +38,12 @@ public class PacienteController {
     @GetMapping("/pacienteAdd")
     public ModelAndView add (Paciente paciente){
         ModelAndView mv = new ModelAndView("/pacienteAdd");
-        mv.addObject("pacientes", paciente);
+        mv.addObject("clinicas", clinicaService.findAll());
+        mv.addObject("paciente", paciente);
         return mv;
     }
     @PostMapping("/pacienteSave")
-    public ModelAndView save(@Valid Paciente paciente, BindingResult result){
+    public ModelAndView save(@Valid Paciente paciente, BindingResult result, long clinica){
         if (result.hasErrors()){
             return add(paciente);
         }

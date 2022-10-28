@@ -24,8 +24,8 @@
                     <th>Email</th>
                     <th>Endereço</th>
                     <th>Nascimento</th>
-                    <th>Voltar</th>
-                    <th>Ações</th>
+                    <th>CPF</th>
+                    <th>Endereço</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -36,12 +36,16 @@
                     <td th:text="${paciente.email}"></td>
                     <td th:text="${paciente.endereco}"></td>
                     <td th:text="${paciente.dataNasc}"></td>
+                    <td th:text="${paciente.documento}"></td>
+                    <td th:text="${paciente.exames}"></td>
+
+
                     <td><a class="btn btn-sm btn-primary" th:href="@{/clinica}" ></a></td>
 
                     <td>
                         <div class="btn-group pull-right">
                             <a class="btn btn-sm btn-primary" th:href="@{/edit/{id}(id=${paciente.id})}" >Editar</a>
-                            <a class="delete btn btn-sm btn-danger" th:href="@{/delete/{id}(id=${paciente.id})}">Excluir</a>
+                            <a class="delete btn btn-sm btn-danger" th:href="@{/deletePaciente/{id}(id=${paciente.id})}">Excluir</a>
                         </div>
                     </td>
                 </tr>

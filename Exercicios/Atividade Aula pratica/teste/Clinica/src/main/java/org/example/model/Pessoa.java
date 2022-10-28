@@ -1,88 +1,84 @@
-package org.example.model;
+    package org.example.model;
 
-import org.hibernate.validator.constraints.NotBlank;
+    import org.hibernate.validator.constraints.NotBlank;
+    import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.Date;
+    import javax.persistence.*;
+    import javax.validation.constraints.NotNull;
+    import java.io.Serializable;
+    import java.util.Date;
+    @Entity
+    public abstract class Pessoa implements Serializable {
+        @Id
+        @GeneratedValue( strategy = GenerationType.AUTO)
+        private Long id;
+        @Column(nullable = false, length = 150) //define o tamanho da coluna
+        @NotBlank (message = "Nome é uma informação obrigatória")
+        private String nome;
 
-public abstract class Pessoa {
+        @Column(nullable = false, length = 150) //define o tamanho da coluna
+        @NotBlank (message = "telefone é uma informação obrigatória")
+        private String telefone;
 
-   /* static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue( strategy = GenerationType.AUTO)
-    @Column(nullable = false, length = 150) //define o tamanho da coluna
-    @NotBlank(message = "Nome da Clínica é uma informação obrigatória")
-    private long id;*/
+        @Column(nullable = false, length = 150) //define o tamanho da coluna
+        @NotBlank (message = "email é uma informação obrigatória")
+        private String email;
 
-    @Column(nullable = false, length = 150) //define o tamanho da coluna
-    @NotBlank (message = "Nome da Clínica é uma informação obrigatória")
-    private String nome;
+        @Column(nullable = false, length = 150) //define o tamanho da coluna
+        @NotBlank (message = "Endereço é uma informação obrigatória")
+        private String endereco;
 
-    @Column(nullable = false, length = 150) //define o tamanho da coluna
-    @NotBlank (message = "Nome da Clínica é uma informação obrigatória")
-    private String telefone;
+        @Column(nullable = false)
+        @Temporal(TemporalType.DATE)
+        @DateTimeFormat(pattern = "yyyy-MM-dd")
+        @NotNull(message = "Data de nascimento é uma informação obrigatória")
+        private Date dataNasc;
 
-    @Column(nullable = false, length = 150) //define o tamanho da coluna
-    @NotBlank (message = "Nome da Clínica é uma informação obrigatória")
-    private String email;
+        public Long getId() {
+            return id;
+        }
 
-    @Column(nullable = false, length = 150) //define o tamanho da coluna
-    @NotBlank (message = "Nome da Clínica é uma informação obrigatória")
-    private String endereco;
+        public void setId(Long id) {
+            this.id = id;
+        }
 
-    @Column(nullable = false, length = 150) //define o tamanho da coluna
-    @NotBlank (message = "Nome da Clínica é uma informação obrigatória")
-    private Date dataNasc;
+        public String getNome() {
+            return nome;
+        }
 
-   /* public long getId() {
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
 
-        return id;
+        public String getTelefone() {
+            return telefone;
+        }
+
+        public void setTelefone(String telefone) {
+            this.telefone = telefone;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        public String getEndereco() {
+            return endereco;
+        }
+
+        public void setEndereco(String endereco) {
+            this.endereco = endereco;
+        }
+
+        public Date getDataNasc() {
+            return dataNasc;
+        }
+
+        public void setDataNasc(Date dataNasc) {
+            this.dataNasc = dataNasc;
+        }
     }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-*/
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public Date getDataNasc() {
-        return dataNasc;
-    }
-
-    public void setDataNasc(Date dataNasc) {
-        this.dataNasc = dataNasc;
-    }
-}

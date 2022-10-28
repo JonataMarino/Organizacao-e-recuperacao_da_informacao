@@ -1,44 +1,33 @@
-package org.example.model;
+    package org.example.model;
+    import javax.persistence.*;
+    import java.io.Serializable;
 
-import org.hibernate.validator.constraints.NotBlank;
+    @Entity(name = "tbl_paciente") //define o nome da tabela que sera criada no banco de dados
+    public class Paciente extends Pessoa implements Serializable {
+      private String documento;
+      @Column (nullable = false)
+      private String exames;
 
-import javax.persistence.*;
-import java.io.Serializable;
+        public Clinica getClinica() {
+            return clinica;
+        }
 
-@Entity(name = "tbl_paciente") //define o nome da tabela que sera criada no banco de dados
-public class Paciente extends Pessoa implements Serializable {
-   @Id
-    @GeneratedValue( strategy = GenerationType.AUTO)
-    private Long id;
+        public void setClinica(Clinica clinica) {
+            this.clinica = clinica;
+        }
 
-    public Long getId() {
-        return id;
+        @ManyToOne
+      private Clinica clinica;
+        public String getDocumento() {
+            return documento;
+        }
+        public void setDocumento(String documento) {
+            this.documento = documento;
+        }
+        public String getExames() {
+            return exames;
+        }
+        public void setExames(String exames) {
+            this.exames = exames;
+        }
     }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-   /*
-    @Column(nullable = false, length = 150) //define o tamanho da coluna
-    @NotBlank(message = "Endereço do paciente é uma informação obrigatória")
-    private String adress;
-
-    public String getAdress() {
-        return adress;
-    }
-
-    public void setAdress(String adress) {
-        this.adress = adress;
-    }
-    /*
-    /*    private EndPaciente adress;
-
-    public EndPaciente getAdress() {
-        return adress;
-    }
-
-    public void setAdress(EndPaciente adress) {
-        this.adress = adress;
-    }*/
-}

@@ -1,10 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Cadastro de Posts</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong>Cadastro de Pacientes</strong>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" th:object="${paciente}" th:action="@{/pacienteSave}" method="POST" style="margin: 10px">
+                <div class="form-group">
+                    <fieldset>
+                        <div class="form-group row">
+                            <div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
+                                <div th:each="detailedError : ${#fields.detailedErrors()}">
+                                    <span th:text="${detailedError.message}"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4" th:classappend="${#fields.hasErrors('nome')}? 'has-error'">
+                                <label>Nome</label>
+                                <input type="text" class="form-control input-sm" th:field="*{nome}" autofocus="autofocus" placeholder="Informe o nome" maxlength="150"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4" th:classappend="${#fields.hasErrors('telefone')}? 'has-error'">
+                                <label>Telefone</label>
+                                <input type="text" class="form-control input-sm" th:field="*{telefone}" maxlength="150" placeholder="Informe o telefone"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4" th:classappend="${#fields.hasErrors('email')}? 'has-error'">
+                                <label>email</label>
+                                <input type="text" class="form-control input-sm" th:field="*{email}" maxlength="150" placeholder="Informe o email"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4" th:classappend="${#fields.hasErrors('endereco')}? 'has-error'">
+                                <label>endereço</label>
+                                <input type="text" class="form-control input-sm" th:field="*{endereco}"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4" th:classappend="${#fields.hasErrors('dataNasc')}? 'has-error'">
+                                <label>Data de Nascimento</label>
+                                <input type="date" class="form-control input-sm" th:field="*{dataNasc}"/>
+                                <div class="form-group row">
+                                    <div class="col-md-4" th:classappend="${#fields.hasErrors('documento')}? 'has-error'">
+                                        <label>CPF</label>
+                                        <input type="text" class="form-control input-sm" th:field="*{documento}"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-4" th:classappend="${#fields.hasErrors('exames')}? 'has-error'">
+                                        <label>endereço</label>
+                                        <input type="text" class="form-control input-sm" th:field="*{exames}"/>
+                                    </div>
+                                </div>
 
-</body>
-</html>
+                                <div class="form-group row">
+                                    <div class="col-md-4">
+                                        <label>Clinica</label>
+                                    <select th:field="*{clinica}" class="form-control input-sm">
+                                    <option th:each="clinica : ${clinicas}"
+                                            th:value="${clinica.id}"
+                                            th:text="${clinica.nome}"></option>
+                                </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="form-group row">
+                    <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+                    <a th:href="@{/}" class="btn btn-sm btn-default">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    </body>
+    </html>

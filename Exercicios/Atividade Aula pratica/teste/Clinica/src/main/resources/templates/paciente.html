@@ -26,6 +26,7 @@
                     <th>Nascimento</th>
                     <th>CPF</th>
                     <th>Endereço</th>
+                    <th>Exames</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -38,10 +39,6 @@
                     <td th:text="${paciente.dataNasc}"></td>
                     <td th:text="${paciente.documento}"></td>
                     <td th:text="${paciente.exames}"></td>
-
-
-                    <td><a class="btn btn-sm btn-primary" th:href="@{/clinica}" ></a></td>
-
                     <td>
                         <div class="btn-group pull-right">
                             <a class="btn btn-sm btn-primary" th:href="@{/edit/{id}(id=${paciente.id})}" >Editar</a>

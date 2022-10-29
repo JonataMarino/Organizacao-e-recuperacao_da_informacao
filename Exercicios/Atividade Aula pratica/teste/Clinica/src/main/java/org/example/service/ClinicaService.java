@@ -1,32 +1,29 @@
-package org.example.service;
+    package org.example.service;
+    import org.example.repository.IClinicaRepository;
+    import org.example.model.Clinica;
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.stereotype.Service;
+    import java.util.List;
 
+    @Service //Define a classe como um bean do Spring
+    public class ClinicaService {
 
-import org.example.repository.ClinicaRepository;
-import org.example.model.Clinica;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+        @Autowired
+        private IClinicaRepository repository; // injeta o repositório
 
-import java.util.List;
+        public List<Clinica> findAll(){
+            return repository.findAll();
+        } // retorna uma lista com todas as clinicas inseridas
 
-@Service //Define a classe como um bean do Spring
-public class ClinicaService {
+       public Clinica findOne(Long id){
+            return repository.findOne(id);
+        } // retorna uma clinica a partir do id informado
 
-    @Autowired
-    private ClinicaRepository repository; // injeta o repositório
+        public Clinica save (Clinica clinica){
+            return repository.saveAndFlush(clinica);
+        }  // salva ou atualiza uma clinica
 
-    public List<Clinica> findAll(){
-        return repository.findAll();
-    } // retorna uma lista com todas as clinicas inseridas
-
-   public Clinica findOne(Long id){
-        return repository.findOne(id);
-    } // retorna uma clinica a partir do id informado
-
-    public Clinica save (Clinica clinica){
-        return repository.saveAndFlush(clinica);
-    }  // salva ou atualiza uma clinica
-
-    public void delete (Long id){
-        repository.delete(id);
-    } // exclui uma clinica
-}
+        public void delete (Long id){
+            repository.delete(id);
+        } // exclui uma clinica
+    }

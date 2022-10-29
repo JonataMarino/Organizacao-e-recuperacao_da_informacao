@@ -2,7 +2,7 @@ package org.example.service;
 
 
 import org.example.model.Paciente;
-import org.example.repository.PacienteRepository;
+import org.example.repository.IPacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.List;
 public class PacienteService {
 
         @Autowired
-        private PacienteRepository repository; // injeta o repositório
+        private IPacienteRepository repository; // injeta o repositório
 
         public List<Paciente> findAll(){
             return repository.findAll();
@@ -20,14 +20,14 @@ public class PacienteService {
 
         public Paciente findOne(Long id){
             return repository.findOne(id);
-        } // retorna uma clinica a partir do id informado
+        } // retorna paciente a partir do id informado
 
         public Paciente save (Paciente paciente){
             return repository.saveAndFlush(paciente);
-        }  // salva ou atualiza uma clinica
+        }  // salva ou atualiza um paciente
 
         public void delete (Long id){
             repository.delete(id);
-        } // exclui uma clinica
+        } // exclui paciente
     }
 

@@ -1,6 +1,4 @@
 package org.example.model;
-
-
 import org.hibernate.validator.constraints.NotBlank;
 import javax.persistence.*;
 import java.io.Serializable;

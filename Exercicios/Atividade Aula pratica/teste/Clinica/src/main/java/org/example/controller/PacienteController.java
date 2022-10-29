@@ -1,6 +1,5 @@
 package org.example.controller;
 
-import org.example.model.Clinica;
 import org.example.model.Paciente;
 import org.example.service.ClinicaService;
 import org.example.service.PacienteService;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.validation.Valid;
 
 @Controller
@@ -40,6 +38,12 @@ public class PacienteController {
         ModelAndView mv = new ModelAndView("/pacienteAdd");
         mv.addObject("clinicas", clinicaService.findAll());
         mv.addObject("paciente", paciente);
+        return mv;
+    }
+    @GetMapping("/pacienteEdit/{id}")
+    public ModelAndView update (@PathVariable("id") long id){
+        ModelAndView mv = new ModelAndView("/pacienteEdit");
+        mv.addObject("paciente", service.findOne(id));
         return mv;
     }
     @PostMapping("/pacienteSave")

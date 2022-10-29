@@ -45,7 +45,7 @@
                         <div class="form-group row">
                             <div class="col-md-4" th:classappend="${#fields.hasErrors('endereco')}? 'has-error'">
                                 <label>endereço</label>
-                                <input type="text" class="form-control input-sm" th:field="*{endereco}"/>
+                                <input type="text" class="form-control input-sm" th:field="*{endereco}" maxlength="150"/>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -55,13 +55,13 @@
                                 <div class="form-group row">
                                     <div class="col-md-4" th:classappend="${#fields.hasErrors('documento')}? 'has-error'">
                                         <label>CPF</label>
-                                        <input type="text" class="form-control input-sm" th:field="*{documento}"/>
+                                        <input type="text" class="form-control input-sm" th:field="*{documento}" maxlength="150"/>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-4" th:classappend="${#fields.hasErrors('exames')}? 'has-error'">
-                                        <label>endereço</label>
-                                        <input type="text" class="form-control input-sm" th:field="*{exames}"/>
+                                        <label>Exames</label>
+                                        <input type="text" class="form-control input-sm" th:field="*{exames}" maxlength="150"/>
                                     </div>
                                 </div>
 

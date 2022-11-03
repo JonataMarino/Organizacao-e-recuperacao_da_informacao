@@ -18,9 +18,10 @@
         @Column(nullable = false, length = 150) //define o tamanho da coluna
         @NotBlank (message = "email é uma informação obrigatória")
         private String email;
+        @OneToOne
         @Column(nullable = false, length = 150) //define o tamanho da coluna
         @NotBlank (message = "Endereço é uma informação obrigatória")
-        private String endereco;
+        private Endereco adress;
         @Column(nullable = false)
         @Temporal(TemporalType.DATE)
         @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -50,12 +51,15 @@
         public void setEmail(String email) {
             this.email = email;
         }
-        public String getEndereco() {
-            return endereco;
+
+        public Endereco getAdress() {
+            return adress;
         }
-        public void setEndereco(String endereco) {
-            this.endereco = endereco;
+
+        public void setAdress(Endereco adress) {
+            this.adress = adress;
         }
+
         public Date getDataNasc() {
             return dataNasc;
         }

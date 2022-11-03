@@ -29,9 +29,18 @@ public class Clinica implements Serializable  {
     @NotBlank (message = "Especialidade da Clínica é uma informação obrigatória")
     private String especialidade;
 
-    @Column(nullable = false, length = 150) //define o tamanho da coluna
-    @NotBlank (message = "Endereço da Clínica é uma informação obrigatória")
-    private String adress;
+
+
+    @OneToOne
+    private Endereco endereco;
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
 
     public Long getId() {
         return id;
@@ -73,13 +82,6 @@ public class Clinica implements Serializable  {
         this.especialidade = especialidade;
     }
 
-    public String getAdress() {
-        return adress;
-    }
-
-    public void setAdress(String adress) {
-        this.adress = adress;
-    }
 
 }
 

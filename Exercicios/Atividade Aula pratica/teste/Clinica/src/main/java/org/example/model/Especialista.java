@@ -10,8 +10,6 @@ public class Especialista extends Pessoa {
     @GeneratedValue( strategy = GenerationType.AUTO)
     private Long id;
     @OneToOne
-    private EndEspecialista adress;
-    @ManyToOne
     private Clinica clinica;
     @Column(nullable = false, length = 150) //define o tamanho da coluna
     @NotBlank(message = "certificado é uma informação obrigatória")
@@ -19,14 +17,16 @@ public class Especialista extends Pessoa {
     @Column(nullable = false, length = 150) //define o tamanho da coluna
     @NotBlank (message = "Registro é uma informação obrigatória")
     private String registroEsp;
+    @Column(nullable = false, length = 150) //define o tamanho da coluna
+    @NotBlank (message = "Especialidade é uma informação obrigatória")
+    private String especialidade;
 
-    public EndEspecialista getAdress() {
-        return adress;
+    public String getEspecialidade() {
+        return especialidade;
     }
 
-
-    public void setAdress(EndEspecialista adress) {
-        this.adress = adress;
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
     }
 
     public String getCertificado() {
@@ -51,6 +51,14 @@ public class Especialista extends Pessoa {
 
     public void setClinica(Clinica clinica) {
         this.clinica = clinica;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
 }

@@ -2,10 +2,7 @@ package org.example.model;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 public class Consulta {
@@ -22,6 +19,7 @@ public class Consulta {
 
     @Column(nullable = false, length = 150) //define o tamanho da coluna
     @NotBlank (message = "Obrigatório informar a data da consulta")
+
     private Date data;
 
     private Clinica clinica;

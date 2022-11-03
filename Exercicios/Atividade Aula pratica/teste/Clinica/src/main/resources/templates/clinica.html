@@ -24,6 +24,7 @@
                     <th>Email</th>
                     <th>Especialidade</th>
                     <th>Endereço</th>
+                    <th>Especialistas</th>
                     <th>Pacientes</th>
                     <th>Ações</th>
                 </tr>
@@ -35,7 +36,9 @@
                     <td th:text="${clinica.telefone}"></td>
                     <td th:text="${clinica.email}"></td>
                     <td th:text="${clinica.especialidade}"></td>
-                    <td th:text="${clinica.adress}"></td>
+                    <td th:text="${clinica.endereco}"></td>
+                    <td></td>
+                  <!--  <td><a class="btn btn-sm btn-primary" th:href="${/especialista}">Acessar</a></td> -->
                     <td><a class="btn btn-sm btn-primary" th:href="@{/paciente}" >Acessar</a></td>
 
                     <td>

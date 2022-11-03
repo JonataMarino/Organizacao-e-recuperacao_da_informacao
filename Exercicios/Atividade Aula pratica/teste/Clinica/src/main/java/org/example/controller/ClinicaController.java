@@ -1,6 +1,7 @@
 package org.example.controller;
 
 import org.example.model.Clinica;
+import org.example.model.Endereco;
 import org.example.service.ClinicaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,7 +31,10 @@ public class ClinicaController {
     @GetMapping("/clinicaAdd")
     public ModelAndView add(Clinica clinica) {
         ModelAndView mv = new ModelAndView("/clinicaAdd");
-        mv.addObject("clinicas", clinica);
+
+       // clinica.setAdress(new Endereco());
+
+        mv.addObject("clinica", clinica);
         return mv;
     }
 

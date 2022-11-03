@@ -3,11 +3,13 @@ package org.example.model;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public abstract class Endereco {
+public class Endereco implements Serializable {
 
-    static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue( strategy = GenerationType.AUTO)
     private Long id;

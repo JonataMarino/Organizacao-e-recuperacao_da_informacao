@@ -3,7 +3,6 @@ import org.hibernate.validator.constraints.NotBlank;
 import javax.persistence.*;
 import java.io.Serializable;
 
-
 @Entity(name = "tbl_clinica") //define o nome da tabela que sera criada no banco de dados
 public class Clinica implements Serializable  {
     private static final long serialVersionUID = 1L;
@@ -31,7 +30,7 @@ public class Clinica implements Serializable  {
 
 
 
-    @OneToOne
+    @OneToOne (cascade=CascadeType.PERSIST)
     private Endereco endereco;
 
     public Endereco getEndereco() {

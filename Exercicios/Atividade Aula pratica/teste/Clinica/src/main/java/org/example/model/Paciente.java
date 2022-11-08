@@ -16,13 +16,13 @@
         @GeneratedValue( strategy = GenerationType.AUTO)
         private Long id;
         @OneToOne
-        private Endereco adress;
+        private Endereco endereco;
         @OneToOne
         private Clinica clinica;
         @Column(nullable = false, length = 150) //define o tamanho da coluna
         @NotBlank (message = "Endereço é uma informação obrigatória")
         private String documento;
-        @Column(nullable = false, length = 150) //define o tamanho da coluna
+        @Column(nullable = false)
         @NotBlank (message = "Endereço é uma informação obrigatória")
         private String exames;
         @Column(nullable = false)
@@ -67,5 +67,13 @@
 
         public void setExames(String exames) {
             this.exames = exames;
+        }
+
+        public Endereco getEndereco() {
+            return endereco;
+        }
+
+        public void setEndereco(Endereco endereco) {
+            this.endereco = endereco;
         }
     }

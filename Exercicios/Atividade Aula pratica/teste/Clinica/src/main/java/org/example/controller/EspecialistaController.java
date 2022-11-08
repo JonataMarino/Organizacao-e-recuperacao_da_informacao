@@ -25,7 +25,7 @@ public class EspecialistaController {
         @GetMapping("/especialistaAdd")
         public ModelAndView add (Especialista especialista){
             ModelAndView mv = new ModelAndView("/pacienteAdd");
-            mv.addObject("especialistas", service.findAll());
+            mv.addObject("especialista", service.findAll());
             mv.addObject("especialista", especialista);
             return mv;
         }

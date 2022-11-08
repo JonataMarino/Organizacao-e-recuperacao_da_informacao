@@ -4,13 +4,12 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity(name = "tbl_clinica") //define o nome da tabela que sera criada no banco de dados
-public class Clinica implements Serializable  {
+public class Clinica implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue( strategy = GenerationType.AUTO)
     private Long id;
-
 
     @Column(nullable = false, length = 150) //define o tamanho da coluna
     @NotBlank (message = "Nome da Clínica é uma informação obrigatória")
@@ -28,11 +27,8 @@ public class Clinica implements Serializable  {
     @NotBlank (message = "Especialidade da Clínica é uma informação obrigatória")
     private String especialidade;
 
-
-
     @OneToOne (cascade=CascadeType.PERSIST)
     private Endereco endereco;
-
     public Endereco getEndereco() {
         return endereco;
     }

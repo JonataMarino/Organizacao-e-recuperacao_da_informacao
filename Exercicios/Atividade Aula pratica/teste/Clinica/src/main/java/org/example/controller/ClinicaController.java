@@ -31,9 +31,6 @@ public class ClinicaController {
     @GetMapping("/clinicaAdd")
     public ModelAndView add(Clinica clinica) {
         ModelAndView mv = new ModelAndView("/clinicaAdd");
-
-       // clinica.setAdress(new Endereco());
-
         mv.addObject("clinica", clinica);
         return mv;
     }
@@ -45,12 +42,9 @@ public class ClinicaController {
         return mv;
     }
 
-
-
     @GetMapping("/delete/{id}")
     public ModelAndView delete(@PathVariable("id") Long id) {
         service.delete(id);
-
         return findAll();
     }
     //recebe o objeto preenchido do thymeleaf e valida

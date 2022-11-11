@@ -1,11 +1,10 @@
 package org.example.model;
-
 import org.hibernate.validator.constraints.NotBlank;
-
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity(name = "tbl_especialista")
-public class Especialista extends Pessoa {
+public class Especialista extends Pessoa implements Serializable {
     @Id
     @GeneratedValue( strategy = GenerationType.AUTO)
     private Long id;

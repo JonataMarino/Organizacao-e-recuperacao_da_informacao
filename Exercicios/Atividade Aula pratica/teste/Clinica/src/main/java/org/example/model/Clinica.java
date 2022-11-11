@@ -8,7 +8,7 @@ public class Clinica implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue( strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(nullable = false, length = 150) //define o tamanho da coluna
@@ -27,7 +27,7 @@ public class Clinica implements Serializable {
     @NotBlank (message = "Especialidade da Clínica é uma informação obrigatória")
     private String especialidade;
 
-    @OneToOne (cascade=CascadeType.PERSIST)
+    @OneToOne (cascade=CascadeType.ALL, orphanRemoval = true)
     private Endereco endereco;
     public Endereco getEndereco() {
         return endereco;

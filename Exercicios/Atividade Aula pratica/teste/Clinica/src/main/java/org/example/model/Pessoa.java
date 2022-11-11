@@ -7,7 +7,6 @@
 
 
     public abstract  class Pessoa implements Serializable {
-
         @Column(nullable = false, length = 150) //define o tamanho da coluna
         @NotBlank (message = "Nome é uma informação obrigatória")
         private String nome;

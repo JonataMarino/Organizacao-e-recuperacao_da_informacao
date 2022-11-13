@@ -1,13 +1,17 @@
 package org.example.model;
 import org.hibernate.validator.constraints.NotBlank;
 import javax.persistence.*;
+//import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import java.io.Serializable;
 
 @Entity(name = "tbl_especialista")
 public class Especialista extends Pessoa implements Serializable {
     @Id
-    @GeneratedValue( strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @OneToOne
+    private Endereco endereco;
     @OneToOne
     private Clinica clinica;
     @Column(nullable = false, length = 150) //define o tamanho da coluna
@@ -58,6 +62,13 @@ public class Especialista extends Pessoa implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+   }
+
+    public Endereco getEndereco() {
+        return endereco;
     }
 
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
 }

@@ -16,6 +16,7 @@ import javax.validation.Valid;
 @Controller
 public class ClinicaController {
 
+
     @Autowired
     private ClinicaService service; // injeta a classe de serviços
 

@@ -1,5 +1,5 @@
 package org.example.controller;
-
+import org.example.model.Pessoa;
 import org.example.model.Paciente;
 import org.example.service.ClinicaService;
 import org.example.service.PacienteService;
@@ -15,6 +15,7 @@ import javax.validation.Valid;
 @Controller
 public class PacienteController {
 
+    @Autowired ClinicaService clinicaservice;
     @Autowired
     private PacienteService service; // injeta a classe de serviços
 
@@ -30,18 +31,18 @@ public class PacienteController {
     @GetMapping("/deletePaciente/{id}")
     public ModelAndView delete(@PathVariable("id")Long id) {
         service.delete(id);
-
+        clinicaservice.findOne(id);
         return findAll();
     }
     @GetMapping("/pacienteAdd")
-    public ModelAndView add (Paciente paciente){
+    public ModelAndView add(Paciente paciente){
         ModelAndView mv = new ModelAndView("/pacienteAdd");
-        mv.addObject("clinicas", clinicaService.findAll());
+        mv.addObject("clinicas", clinicaservice.findAll());
         mv.addObject("paciente", paciente);
         return mv;
     }
     @GetMapping("/pacienteEdit/{id}")
-    public ModelAndView update (@PathVariable("id") long id){
+    public ModelAndView update(@PathVariable("id") long id){
         ModelAndView mv = new ModelAndView("/pacienteEdit");
         mv.addObject("paciente", service.findOne(id));
         return mv;

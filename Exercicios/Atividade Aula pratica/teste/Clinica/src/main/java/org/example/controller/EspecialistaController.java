@@ -1,5 +1,7 @@
 package org.example.controller;
+import org.example.model.Pessoa;
 import org.example.model.Especialista;
+import org.example.service.ClinicaService;
 import org.example.service.EspecialistaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,8 +14,11 @@ import javax.validation.Valid;
 
 @Controller
 public class EspecialistaController {
+
         @Autowired
         private EspecialistaService service; // injeta a classe de serviços
+        @Autowired
+        private ClinicaService clinicaservice; // injeta a classe de serviços
 
         @GetMapping("/especialista")
         public ModelAndView findAll() {
@@ -23,9 +28,9 @@ public class EspecialistaController {
         }
 
         @GetMapping("/especialistaAdd")
-        public ModelAndView add (Especialista especialista){
-            ModelAndView mv = new ModelAndView("/pacienteAdd");
-            mv.addObject("especialista", service.findAll());
+        public ModelAndView add(Especialista especialista){
+            ModelAndView mv = new ModelAndView("/especialistaAdd");
+            mv.addObject("clinicas", clinicaservice.findAll());
             mv.addObject("especialista", especialista);
             return mv;
         }
@@ -39,7 +44,7 @@ public class EspecialistaController {
     @GetMapping("/deleteEspecialista/{id}")
     public ModelAndView delete(@PathVariable("id")Long id) {
         service.delete(id);
-
+        clinicaservice.findOne(id);
         return findAll();
     }
         @PostMapping("/especialistaSave")

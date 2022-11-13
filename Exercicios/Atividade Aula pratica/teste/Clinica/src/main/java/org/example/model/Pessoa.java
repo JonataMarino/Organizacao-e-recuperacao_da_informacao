@@ -1,12 +1,13 @@
-    package org.example.model;
-    import org.hibernate.validator.constraints.NotBlank;
-    import org.springframework.format.annotation.DateTimeFormat;
-    import javax.persistence.*;
-    import java.io.Serializable;
-    import java.util.Date;
+package org.example.model;
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.format.annotation.DateTimeFormat;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
 
 
-    public abstract  class Pessoa implements Serializable {
+    public abstract class Pessoa implements Serializable {
+
         @Column(nullable = false, length = 150) //define o tamanho da coluna
         @NotBlank (message = "Nome é uma informação obrigatória")
         private String nome;
@@ -47,4 +48,11 @@
             this.dataNasc = dataNasc;
         }
 
+        //public Long getId() {
+        //    return id;
+        //}
+
+       // public void setId(Long id) {
+       //     this.id = id;
+       // }
     }

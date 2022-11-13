@@ -1,16 +1,16 @@
-    package org.example.model;
-    import org.hibernate.validator.constraints.NotBlank;
-    import javax.persistence.*;
-    import java.io.Serializable;
-    import javax.persistence.Entity;
-    import javax.persistence.OneToOne;
+package org.example.model;
+import org.hibernate.validator.constraints.NotBlank;
+import javax.persistence.*;
+import java.io.Serializable;
+//import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
     @Entity(name = "tbl_paciente") //define o nome da tabela que sera criada no banco de dados
     public class Paciente extends Pessoa implements Serializable {
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         private Long id;
-        @OneToOne (cascade=CascadeType.ALL)
+        @OneToOne
         private Endereco endereco;
         @OneToOne
         private Clinica clinica;
@@ -50,11 +50,11 @@
             this.endereco = endereco;
         }
 
-        public Long getId() {
-            return id;
-        }
+       // public Long getId() {
+       //     return id;
+        //}
 
-        public void setId(Long id) {
-            this.id = id;
-        }
+        //public void setId(Long id) {
+            //this.id = id;
+        //}
     }

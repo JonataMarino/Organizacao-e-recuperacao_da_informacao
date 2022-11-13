@@ -22,10 +22,9 @@
           <th>Nome</th>
           <th>Telefone</th>
           <th>Especialidade</th>
-          <th>Certificado</th>
-          <th>Endereço</th>
-          <th>Especialidade</th>
-          <th>Certificado</th>
+          <th>Cidade</th>
+          <th>Registro</th>
+          <th>certificado</th>
           <th>Ações</th>
         </tr>
         </thead>
@@ -36,9 +35,8 @@
           <td th:text="${especialista.telefone}"></td>
           <td th:text="${especialista.especialidade}"></td>
           <td th:text="${especialista.endereco.cidade}"></td>
-          <td th:text="${especialista.especialidade}"></td>
+          <td th:text="${especialista.registroEsp}"></td>
           <td th:text="${especialista.certificado}"></td>
-          <td></td>
           <td>
             <div class="btn-group pull-right">
               <a class="btn btn-sm btn-primary" th:href="@{/especialistaEdit/{id}(id=${especialista.id})}" >Editar</a>

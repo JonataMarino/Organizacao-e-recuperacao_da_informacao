@@ -27,7 +27,7 @@ public class Clinica implements Serializable {
     @NotBlank (message = "Especialidade da Clínica é uma informação obrigatória")
     private String especialidade;
 
-    @OneToOne (cascade=CascadeType.ALL, orphanRemoval = true)
+    @OneToOne (cascade=CascadeType.PERSIST)
     private Endereco endereco;
     public Endereco getEndereco() {
         return endereco;

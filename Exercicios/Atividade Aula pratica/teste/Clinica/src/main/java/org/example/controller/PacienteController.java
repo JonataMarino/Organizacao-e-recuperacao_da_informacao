@@ -15,12 +15,11 @@ import javax.validation.Valid;
 @Controller
 public class PacienteController {
 
-    @Autowired ClinicaService clinicaservice;
+    @Autowired
+    private ClinicaService clinicaservice;
     @Autowired
     private PacienteService service; // injeta a classe de serviços
 
-    @Autowired
-    private ClinicaService clinicaService;
 
     @GetMapping("/paciente")
     public ModelAndView findAll() {

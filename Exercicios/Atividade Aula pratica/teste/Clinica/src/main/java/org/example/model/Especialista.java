@@ -10,7 +10,7 @@ public class Especialista extends Pessoa implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @OneToOne
+    @OneToOne (cascade=CascadeType.ALL, orphanRemoval = true)
     private Endereco endereco;
     @OneToOne
     private Clinica clinica;

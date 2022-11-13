@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         private Long id;
-        @OneToOne
+        @OneToOne (cascade=CascadeType.ALL, orphanRemoval = true)
         private Endereco endereco;
         @OneToOne
         private Clinica clinica;
@@ -50,11 +50,11 @@ import javax.persistence.OneToOne;
             this.endereco = endereco;
         }
 
-       // public Long getId() {
-       //     return id;
-        //}
+        public Long getId() {
+            return id;
+        }
 
-        //public void setId(Long id) {
+        public void setId(Long id) {
             //this.id = id;
-        //}
+        }
     }

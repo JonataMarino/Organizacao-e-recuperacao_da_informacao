@@ -43,8 +43,9 @@ public class EspecialistaController {
 
     @GetMapping("/deleteEspecialista/{id}")
     public ModelAndView delete(@PathVariable("id")Long id) {
-        service.delete(id);
-        clinicaservice.findOne(id);
+            //service.findOne(id);
+            service.delete(id);
+        //clinicaservice.findOne(id);
         return findAll();
     }
         @PostMapping("/especialistaSave")

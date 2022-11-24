@@ -5,8 +5,9 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
+     @MappedSuperclass
+    public abstract class Pessoa{
 
-    public abstract class Pessoa implements Serializable {
 
         @Column(nullable = false, length = 150) //define o tamanho da coluna
         @NotBlank (message = "Nome é uma informação obrigatória")

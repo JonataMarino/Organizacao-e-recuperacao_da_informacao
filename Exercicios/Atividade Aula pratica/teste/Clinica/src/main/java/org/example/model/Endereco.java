@@ -11,32 +11,32 @@ public class Endereco implements Serializable {
     private Long id;
 
     @Column(nullable = false, length = 150) //define o tamanho da coluna
-    @NotBlank(message = "logradouro é uma informação obrigatória")
+ //   @NotBlank(message = "logradouro é uma informação obrigatória")
     private String logradouro;
 
     @Column(nullable = false, length = 150) //define o tamanho da coluna
-    @NotBlank (message = "Numero é uma informação obrigatória")
+ //   @NotBlank (message = "Numero é uma informação obrigatória")
     private String numero;
 
     @Column(nullable = false, length = 150) //define o tamanho da coluna
     private String complemento;
     @Column(nullable = false, length = 150) //define o tamanho da coluna
-    @NotBlank (message = "CEP Clínica é uma informação obrigatória")
+ //   @NotBlank (message = "CEP Clínica é uma informação obrigatória")
     private String cep;
     @Column(nullable = false, length = 150) //define o tamanho da coluna
-    @NotBlank (message = "Bairro é uma informação obrigatória")
+ //   @NotBlank (message = "Bairro é uma informação obrigatória")
     private String bairro;
 
     @Column(nullable = false, length = 150) //define o tamanho da coluna
-    @NotBlank (message = "Cidade é uma informação obrigatória")
+ //   @NotBlank (message = "Cidade é uma informação obrigatória")
     private String cidade;
 
     @Column(nullable = false, length = 150) //define o tamanho da coluna
-    @NotBlank (message = "Estado é uma informação obrigatória")
+   // @NotBlank (message = "Estado é uma informação obrigatória")
     private String estado;
 
     @Column(nullable = false, length = 150) //define o tamanho da coluna
-    @NotBlank (message = "País é uma informação obrigatória")
+   // @NotBlank (message = "País é uma informação obrigatória")
     private String pais;
 
     public Long getId() {

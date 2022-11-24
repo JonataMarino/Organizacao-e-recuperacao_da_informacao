@@ -1,12 +1,14 @@
 package org.example.controller;
 
 import org.example.model.Clinica;
-import org.example.model.Endereco;
 import org.example.service.ClinicaService;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -42,8 +44,15 @@ public class ClinicaController {
         mv.addObject("clinica", service.findOne(id));
         return mv;
     }
+    @PostMapping("/clinicaEdit")
+    public ModelAndView update (@Valid Clinica clinica){
+        service.save(clinica);
+        return findAll();
+    }
+
 
     @GetMapping("/delete/{id}")
+   @Cascade(CascadeType.DELETE)
     public ModelAndView delete(@PathVariable("id") Long id) {
         service.delete(id);
         return findAll();

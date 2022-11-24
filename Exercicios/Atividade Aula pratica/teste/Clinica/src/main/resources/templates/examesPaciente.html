@@ -11,7 +11,7 @@
 <body>
 <div class="panel panel-default">
     <div class="panel-heading">
-        <strong>Lista de Pacientes</strong>
+        <strong>Exames Listados do Paciente </strong>
     </div>
     <div class="panel-body">
         <div class="table-responsive">
@@ -20,11 +20,6 @@
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
-                    <th>Telefone</th>
-                    <th>Email</th>
-                    <th>Endereço</th>
-                    <th>Nascimento</th>
-                    <th>CPF</th>
                     <th>Exames</th>
                     <th>Ações</th>
                 </tr>
@@ -33,16 +28,11 @@
                 <tr th:each="paciente : ${paciente}">
                     <td th:text="${paciente.id}"></td>
                     <td th:text="${paciente.nome}"></td>
-                    <td th:text="${paciente.telefone}"></td>
-                    <td th:text="${paciente.email}"></td>
-                    <td th:text="${paciente.endereco.cidade}"></td>
-                    <td th:text="${paciente.dataNasc}"></td>
-                    <td th:text="${paciente.documento}"></td>
                     <td th:text="${paciente.exames}"></td>
                     <td>
                         <div class="btn-group pull-right">
-                            <a class="btn btn-sm btn-primary" th:href="@{/pacienteEdit/{id}(id=${paciente.id})}" >Editar</a>
-                            <a class="delete btn btn-sm btn-danger" th:href="@{/deletePaciente/{id}(id=${paciente.id})}">Excluir</a>
+                            <a class="btn btn-sm btn-primary" th:href="@{/save/{id}(id=${paciente.id})}" >salvar</a>
+                            <a th:href="@{/}" class="btn btn-sm btn-default">Voltar</a>
                         </div>
                     </td>
                 </tr>
@@ -51,7 +41,7 @@
         </div>
     </div>
     <div class="panel-footer">
-        <a class="btn btn-sm btn-success" th:href="@{/pacienteAdd/}" >Adicionar</a>
+        <a class="btn btn-sm btn-success" th:href="@{/save/}" >Salvar</a>
         <a th:href="@{/}" class="btn btn-sm btn-default">Voltar</a>
     </div>
 </div>

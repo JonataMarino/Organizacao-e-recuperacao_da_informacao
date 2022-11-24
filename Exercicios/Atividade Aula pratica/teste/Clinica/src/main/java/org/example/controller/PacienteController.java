@@ -3,6 +3,8 @@ import org.example.model.Pessoa;
 import org.example.model.Paciente;
 import org.example.service.ClinicaService;
 import org.example.service.PacienteService;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -28,6 +30,7 @@ public class PacienteController {
         return mv;
     }
     @GetMapping("/deletePaciente/{id}")
+    @Cascade(CascadeType.DELETE)
     public ModelAndView delete(@PathVariable("id")Long id) {
         service.delete(id);
         clinicaservice.findOne(id);
@@ -43,6 +46,7 @@ public class PacienteController {
     @GetMapping("/pacienteEdit/{id}")
     public ModelAndView update(@PathVariable("id") long id){
         ModelAndView mv = new ModelAndView("/pacienteEdit");
+        mv.addObject("clinicas", clinicaservice.findAll());
         mv.addObject("paciente", service.findOne(id));
         return mv;
     }

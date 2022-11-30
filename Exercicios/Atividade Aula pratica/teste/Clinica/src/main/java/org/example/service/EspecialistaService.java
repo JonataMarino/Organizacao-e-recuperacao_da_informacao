@@ -1,5 +1,7 @@
 package org.example.service;
 import org.example.model.Especialista;
+import org.example.repository.IClinicaRepository;
+import org.example.repository.IEnderecoRepository;
 import org.example.repository.IEspecialistaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

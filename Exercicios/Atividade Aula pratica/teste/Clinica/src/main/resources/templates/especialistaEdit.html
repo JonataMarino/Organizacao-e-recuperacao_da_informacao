@@ -14,7 +14,7 @@
     <strong>Edição de Cadastros de Especialista</strong>
   </div>
   <div class="panel-body">
-    <form class="form-horizontal" th:object="${especialista}" th:action="@{/save}" method="POST" style="margin: 10px">
+    <form class="form-horizontal" th:object="${especialista}" th:action="@{/especialistaEdit}" method="POST" style="margin: 10px">
       <div class="form-group">
         <fieldset>
           <div class="form-group row">
@@ -25,7 +25,11 @@
             </div>
           </div>
 
-          <input type="hidden" class="form-control input-sm" th:field="*{id}"/>
+          <input type="text" class="form-control input-sm" th:field="*{id}"/>
+          <input type="text" class="form-control input-sm" th:field="*{endereco.id}"/>
+          <input type="text" class="form-control input-sm" th:field="*{clinica.id}"/>
+
+
           <div class="form-group row">
             <div class="col-md-4" th:classappend="${#fields.hasErrors('nome')}? 'has-error'">
               <label>Nome</label>
@@ -45,25 +49,47 @@
             </div>
           </div>
           <div class="form-group row">
-            <div class="col-md-4" th:classappend="${#fields.hasErrors('registroEsp')}? 'has-error'">
+            <div class="col-md-4" th:classappend="${#fields.hasErrors('dataNasc')}? 'has-error'">
+              <label>data de nascimente</label>
+              <input type="date" class="form-control input-sm" th:field="*{dataNasc}"/>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-4" th:classappend="${#fields.hasErrors('especialidade')}? 'has-error'">
               <label>especialidade</label>
-              <input type="text" class="form-control input-sm" th:field="*{registroEsp}" maxlength="150"/>
+              <input type="text" class="form-control input-sm" th:field="*{especialidade}" maxlength="150"/>
             </div>
           </div>
           <div class="form-group row">
             <div class="col-md-4" th:classappend="${#fields.hasErrors('endereco')}? 'has-error'">
-              <div class="col-md-4" th:classappend="${#fields.hasErrors('nome')}? 'has-error'">
-                <label>Nome</label>
-                <input type="text" class="form-control input-sm" th:field="*{nome}" autofocus="autofocus" placeholder="Informe o nome" maxlength="150"/>
-              </div>
               <label>Endereço</label>
+              <label>Logradouro</label>
               <input type="text" class="form-control input-sm" th:field="*{endereco.logradouro}" maxlength="150"/>
+              <label>Número</label>
+              <input type="text" class="form-control input-sm" th:field="*{endereco.numero}" maxlength="150"/>
+              <label>Bairro</label>
+              <input type="text" class="form-control input-sm" th:field="*{endereco.bairro}" maxlength="150"/>
+              <label>Complemento</label>
+              <input type="text" class="form-control input-sm" th:field="*{endereco.complemento}" maxlength="150"/>
+              <label>CEP</label>
+              <input type="text" class="form-control input-sm" th:field="*{endereco.cep}" maxlength="150"/>
+              <label>Cidade</label>
+              <input type="text" class="form-control input-sm" th:field="*{endereco.cidade}" maxlength="150"/>
+              <label>Estado</label>
+              <input type="text" class="form-control input-sm" th:field="*{endereco.estado}" maxlength="150"/>
+              <label>País</label>
+              <input type="text" class="form-control input-sm" th:field="*{endereco.pais}" maxlength="150"/>
+            </div>
+            <div class="col-md-4" th:classappend="${#fields.hasErrors('certificado')}? 'has-error'">
+              <label>Certificado</label>
+              <input type="text" class="form-control input-sm" th:field="*{certificado}" maxlength="150" placeholder="Informe o endereço"/>
+            </div>
+            <div class="col-md-4" th:classappend="${#fields.hasErrors('registroEsp')}? 'has-error'">
+              <label>Registro</label>
+              <input type="text" class="form-control input-sm" th:field="*{registroEsp}" maxlength="150" placeholder="Informe o endereço"/>
             </div>
           </div>
-          <div class="col-md-4" th:classappend="${#fields.hasErrors('certificado')}? 'has-error'">
-            <label>Certificado</label>
-            <input type="text" class="form-control input-sm" th:field="*{certificado}" maxlength="150" placeholder="Informe o endereço"/>
-          </div>
+
         </fieldset>
       </div>
       <div class="form-group row">

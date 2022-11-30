@@ -1,4 +1,5 @@
 package org.example.controller;
+import org.example.model.Clinica;
 import org.example.model.Pessoa;
 import org.example.model.Especialista;
 import org.example.service.ClinicaService;
@@ -35,10 +36,16 @@ public class EspecialistaController {
             return mv;
         }
     @GetMapping("/especialistaEdit/{id}")
-    public ModelAndView update (@PathVariable("id") long id){
+    public ModelAndView update(@PathVariable("id") long id){
         ModelAndView mv = new ModelAndView("/especialistaEdit");
+      //  mv.addObject("clinicas", clinicaservice.findAll());
         mv.addObject("especialista", service.findOne(id));
         return mv;
+    }
+    @PostMapping("/especialistaEdit")
+    public ModelAndView update (@Valid Especialista especialista){
+        service.save(especialista);
+        return findAll();
     }
 
     @GetMapping("/deleteEspecialista/{id}")
@@ -48,6 +55,7 @@ public class EspecialistaController {
         //clinicaservice.findOne(id);
         return findAll();
     }
+
         @PostMapping("/especialistaSave")
         public ModelAndView save(@Valid Especialista especialista, BindingResult result){
             if (result.hasErrors()){

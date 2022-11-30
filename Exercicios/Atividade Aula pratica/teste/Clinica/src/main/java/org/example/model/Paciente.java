@@ -55,6 +55,6 @@ import javax.persistence.OneToOne;
         }
 
         public void setId(Long id) {
-            //this.id = id;
+            this.id = id;
         }
     }

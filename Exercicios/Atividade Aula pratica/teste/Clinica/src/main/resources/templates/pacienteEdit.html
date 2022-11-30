@@ -83,7 +83,7 @@
                         </div>
                         <div>
                         <label>Clinica</label>
-                        <select th:field="*{clinica}" maxlength="150">
+                        <select th:field="*{clinica}">
                             <option th:each="clinica : ${clinicas}"
                                     th:value="${clinica.id}"
                                     th:text="${clinica.nome}"></option>

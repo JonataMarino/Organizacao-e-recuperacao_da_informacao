@@ -55,17 +55,6 @@ public class PacienteController {
         service.save(paciente);
         return findAll();
     }
-    /*    @GetMapping("/clinicaEdit/{id}")
-    public ModelAndView update (@PathVariable("id") long id){
-        ModelAndView mv = new ModelAndView("/clinicaEdit");
-        mv.addObject("clinica", service.findOne(id));
-        return mv;
-    }
-    @PostMapping("/clinicaEdit")
-    public ModelAndView update (@Valid Clinica clinica){
-        service.save(clinica);
-        return findAll();
-    }*/
     @PostMapping("/pacienteSave")
     public ModelAndView save(@Valid Paciente paciente, BindingResult result, long clinica){
         if (result.hasErrors()){

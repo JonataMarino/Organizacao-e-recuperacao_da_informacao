@@ -23,7 +23,7 @@ public class PacienteService {
         } // retorna paciente a partir do id informado
 
         public Paciente save (Paciente paciente){
-            return repository.saveAndFlush(paciente);
+            return repository.save(paciente);
         }  // salva ou atualiza um paciente
 
         public void delete (Long id){
